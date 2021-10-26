@@ -1,6 +1,22 @@
 package com.run;
 
 
+//import org.junit.runner.RunWith;
+//
+//import cucumber.api.CucumberOptions;
+//import cucumber.api.SnippetType;
+//import cucumber.api.junit.Cucumber;
+//@RunWith(Cucumber.class)
+//@CucumberOptions(features= {"Features/loginstudent.feature"},glue= {"com.step/StepDefinitionStudent.java"},
+//tags= {"@tags1"},monochrome=true,dryRun=false,snippets = SnippetType.CAMELCASE,
+//plugin = {"pretty","html:test-output"})
+//
+//
+//public class FacultyRunner {
+//
+//}
+
+
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
