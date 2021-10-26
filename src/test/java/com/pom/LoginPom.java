@@ -69,7 +69,7 @@ public class LoginPom {
                  
                  public static WebElement dashboardButton(WebDriver driver) {
              		
-                     return driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div/div/ul/li[1]/a"));
+                     return driver.findElement(By.xpath("/html/body/div[2]/div/div/nav/div/div/div[3]/div/div/div/div[1]/div/ul[1]/li[1]/a"));
                      }
                  
                  
