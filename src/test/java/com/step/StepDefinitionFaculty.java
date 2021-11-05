@@ -293,10 +293,10 @@ public class StepDefinitionFaculty{
 		driver.findElement(By.xpath("//input[@id='input_1']")).sendKeys("12");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='input_1']//following::button[1]")).click();
-		driver.findElement(By.xpath("//*[@id=\"md-4-month-2021-9-29\"]/span")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id=\"accordiongroup-146-9998-panel\"]/div/div/div/form/div[2]/div[4]/div/button/span")).click();
-		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//*[@id=\"md-4-month-2021-11-5\"]/span")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//*[@id=\"accordiongroup-146-9998-panel\"]/div/div/div/form/div[2]/div[4]/div/button/span")).click();
+//		Thread.sleep(3000);
 	}
 
 	@Then("Enter details to create batch")
@@ -939,9 +939,9 @@ public class StepDefinitionFaculty{
 		@When("Faculty should see the edit symbol Manage Batches")
 		public void facultyShouldSeeTheEditSymbolManageBatches() throws Exception {
 			driver.findElement(By.xpath("//a[contains(text(),'MANAGE BATCHES')]")).click();
-			Thread.sleep(10000);
-			driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
-			driver.findElement(By.xpath(" //span[contains(text(),'Active Batches')]//following::i[1]")).click();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[1]/md-content/ul/div/li[1]/div/md-card/md-card-actions"));
+            
 		}
 
 		@Then("Faculty should click onedit symbol Manage Batches")
@@ -968,9 +968,9 @@ public class StepDefinitionFaculty{
 		@When("Faculty should see the Chat box")
 		public void facultyShouldSeeTheChatBox() throws InterruptedException {
 			driver.findElement(By.xpath("//a[contains(text(),'MANAGE BATCHES')]")).click();
-			Thread.sleep(5000);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);		
 			
-			driver.findElement(By.xpath(" //span[contains(text(),'Active Batches')]//following::i[4]")).click();
+			driver.quit();
 		}
 
 		@Then("Faculty should click on Chat box")
@@ -996,8 +996,11 @@ public class StepDefinitionFaculty{
 
 		@When("Faculty should see the Manage Students")
 		public void facultyShouldSeeTheManageStudents() throws InterruptedException {
+			WebDriverWait wait = new WebDriverWait(driver, 100);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'MANAGE BATCHES')]"))).click();
+
 			driver.findElement(By.xpath("//a[contains(text(),'MANAGE BATCHES')]")).click();
-			Thread.sleep(3000);
+		
 			driver.findElement(By.xpath(" //span[contains(text(),'Active Batches')]//following::div[12]")).click();
 		}
 

@@ -129,6 +129,65 @@ public static WebElement ClickOn_InstituteCode(WebDriver driver) {
 	public static WebElement PV_Milestones_assesment(WebDriver driver) {
 		return driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]"));
 	}
+	public static WebElement ClickOn_Profile(WebDriver driver) {
+		return driver.findElement(By.xpath("//li[contains(text(),' Profile')]"));
+	}
+	public static WebElement ClickOn_StudentProfile(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'student')]"));
+	}
+	
+	public static WebElement ClickOn_EditIcon(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'Profile Details')]//following::img[1]"));
+	}
+	
+	public static WebElement ClickOn_EditFirstName(WebDriver driver) {
+		return driver.findElement(By.xpath("//input[@id='input_4']"));
+	}
+	public static WebElement ClickOn_EditEmail(WebDriver driver) {
+		return driver.findElement(By.xpath("//input[@id='input_5']"));
+	}
+	public static WebElement ClickOn_Edit_InstitueCode(WebDriver driver) {
+		return driver.findElement(By.xpath("//input[@id='input_7']"));
+	}
+	public static WebElement ClickOn_Edit_Language(WebDriver driver) {
+		return driver.findElement(By.xpath("//*[@id=\\\"select_value_label_0\\\"]/span[1]"));
+	}
+	public static WebElement ClickOn_Edit_ChangePassword(WebDriver driver) {
+		return driver.findElement(By.xpath("//div[@class='md-container md-ink-ripple']"));
+	}
+	
+	public static WebElement ClickOn_Edit_Cancel(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'CANCEL')]"));
+	}
+
+	
+	public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
+		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[2]/div[2]/button/span"));
+	}
+
+	public static WebElement ClickOn_Notifications(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[@class='notification-icon-red']"));
+	}
+	
+	public static WebElement ClickOn_Reports(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
+	}
+	public static WebElement Download_QuizzReport(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'Reports')]//following::img[1]"));
+	}
+	public static WebElement ClickOn_AssesmentReports(WebDriver driver) {
+		return driver.findElement(By.xpath("//ul[@id='legend']//following::div[5]"));
+	}
+	public static WebElement ClickOn_ReSubmit_Assesment(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'Re-Submit')]"));
+	}
+	public static WebElement ClickOn_Back_Btn(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[contains(text(),'Back')]"));
+	}
+
+	public static WebElement ClickOn_PV_Milestone_Number(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'PV Milestones')]//following::td[2]"));
+	}
 
 
 }

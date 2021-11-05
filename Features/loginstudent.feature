@@ -268,3 +268,180 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
+      @tag23
+  Scenario Outline: Student should able Click on view Profile
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should Click on profile
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag24
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should Click on Notification icon
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag25
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should view Notifications
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag26
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should Click on Reports
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag27
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should view Reports
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag28
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should view Download quizz report
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+@tag29
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should Download quizz report
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag30
+  Scenario Outline: Student should able Click on Notification icon
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should view final assesment report
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag31
+  Scenario Outline: Student should able Click on Submit Button
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should able Click on Submit Button
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag32
+  Scenario Outline: Student should able Click on Submit Button
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should able Click on Back Button
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag33
+  Scenario Outline: Student should able Click on Submit Button
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should able Click any PV_Milestone
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag34
+  Scenario Outline: Student should able Click on Submit Button
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should able to remove Upload document option
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag35
+  Scenario Outline: Student should able Click on Submit Button
+    Given Student should EnTer UserNamE "<username>" and click on next
+    When Student should  EnteR password "<pass>" and click on signin
+    Then Student should able to check status
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+      
+      
+      
+      
+@tag36
+  Scenario Outline: Check Student should be click on view submit 
+    Given Student should EnTer VALid UserNamE "<username>"
+    When Student should  EnteR valid password "<pass>"
+    And Student should in HOME Page
+    Then student click resume
+    Then Student click on PV milestones Button
+    Then Student click on any assignment 
+    Then Student click on view submission 
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+      
+ 
+      
+     @tag37
+  Scenario Outline: Check Student should be in milestone2
+    Given Student should EnTer VALid UserNamE "<username>"
+    When Student should  EnteR valid password "<pass>"
+    And Student should in HOME Page
+    Then student click resume
+    Then Student click on PV milestones Button
+    Then Student click milestone 2 
+    Then Student click on view submit
+    Then verify it enter or not
+ 
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+      @tags38
+  Scenario Outline: Check Student should be click on attempt button and verify error
+    Given Student should EnTer VALid UserNamE "<username>"
+    When Student should  EnteR valid password "<pass>"
+    And Student should in HOME Page
+    Then student click resume
+    Then Student click on PV milestones Button
+    Then Student click milestone 2 
+    Then Student click on view submit
+    Then Student click on attempt button 
+    Then verify it click or not
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+      
+     

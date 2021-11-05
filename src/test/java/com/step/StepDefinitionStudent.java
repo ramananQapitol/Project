@@ -2,8 +2,11 @@ package com.step;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -403,7 +406,226 @@ public class StepDefinitionStudent {
 	   Thread.sleep(3000);
 	   driver.quit();
 	}
+	@Then("student click resume")
+	public void studentClickResume() {
+	    driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div/div/div[2]/div[3]/div[1]/a/div")).click();
+	}
+
+	@Then("Student click on PV milestones Button")
+	public void studentClickOnPVMilestonesButton() {
+	   driver.findElement(By.xpath("//*[@id=\"superfish-2\"]/li[6]/a")).click();
+	}
+
+	@Then("Student click on any assignment")
+	public void studentClickOnAnyAssignment() {
+	   driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]/span")).click();
+	}
+
+	@Then("Student click on view submission")
+	public void studentClickOnViewSubmission() {
+	    driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[1]/div/span")).click();
+	    driver.quit();
+	}
+	@Then("Student click milestone {int}")
+	public void studentClickMilestone(Integer int1) {
+	    driver.findElement(By.xpath("//*[@id=\"myassignments-table\"]/a[2]/div/table/tbody/tr[1]/td[2]  ")).click();
+	}
+
+	@Then("Student click on view submit")
+	public void studentClickOnViewSubmit() throws InterruptedException {
+	    driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]")).click();
+	   
+	}
+	@Then("verify it enter or not")
+	public void verifyItEnterOrNot() {
+	    driver.quit();
+	}
+	@Then("Student click on attempt button")
+	public void studentClickOnAttemptButton() {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+
+		WebElement Submit=driver.findElement(By.xpath("//*[@id=\"edit-submit\"]"));
+		js.executeScript("arguments[0].click()",Submit);
+		
+		
+	    
+	}
+	@Then("verify it click or not")
+	public void verifyItClickOrNot() {
+	    driver.quit();
+	}
+	@Given("Student should EnTer UserNamE {string} and click on next")
+	public void studentShouldEnTerUserNamEAndClickOnNext(String string) {
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		log.UserName(driver).sendKeys(string);
+		log.NextBtn(driver).click();
+	}
+
+	@When("Student should  EnteR password {string} and click on signin")
+	public void studentShouldEnteRPasswordAndClickOnSignin(String string) {
+		log.Enter_PassKey(driver).sendKeys(string);
+		log.ClickOn_SignIn(driver).click();
+	}
+
+	@Then("Student should Click on profile")
+	public void studentShouldClickOnProfile() throws Exception {
+		log.ClickOn_StudentProfile(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_Profile(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_EditIcon(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_EditFirstName(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_EditEmail(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_Edit_InstitueCode(driver).click();
+		Thread.sleep(3000);
+		//	    log.ClickOn_Edit_Language(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_Edit_ChangePassword(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_Edit_Cancel(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_EditIcon(driver).click();
+		log.ClickOn_Edit_SaveChanges(driver).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//i[@class='fa fa-caret-down']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+		Thread.sleep(5000);
+		driver.quit();
+	}
+
+	@Then("Student should Click on Notification icon")
+	public void studentShouldClickOnNotificationIcon() {
+		log.ClickOn_Notifications(driver).click();
+		driver.quit();
+	}
+
+	@Then("Student should view Notifications")
+	public void studentShouldViewNotifications() {
+		log.ClickOn_Notifications(driver).click();
+		driver.quit();
+	}
+
+	@Then("Student should Click on Reports")
+	public void studentShouldClickOnReports() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_Reports(driver).click();
+		driver.quit();
+
+	}
+
+	@Then("Student should view Reports")
+	public void studentShouldViewReports() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_Reports(driver).click();
+		driver.quit();
+	}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@Then("Student should view Download quizz report")
+	public void studentShouldViewDownloadQuizzReport() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_Reports(driver).click();
+	}
+
+
+	@Then("Student should Download quizz report")
+	public void studentShouldDownloadQuizzReport() throws Exception {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_Reports(driver).click();
+		log.Download_QuizzReport(driver).click();
+		Thread.sleep(3000);
+		driver.quit();
+	}
+
+	@Then("Student should view final assesment report")
+	public void studentShouldViewFinalAssesmentReport() throws Exception {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_Reports(driver).click();
+		Thread.sleep(3000);
+		log.ClickOn_AssesmentReports(driver).click();
+		driver.quit();
+	}
+@Then("Student should able Click on Submit Button")
+	public void studentShouldAbleClickOnSubmitButton() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PV_Milestones(driver).click();
+		log.PV_Milestones_assesment(driver).click();
+		log.ClickOn_ReSubmit_Assesment(driver).click();
+		//    driver.quit();
+	}
+
+	@Then("Student should able Click on Back Button")
+	public void studentShouldAbleClickOnBackButton() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PV_Milestones(driver).click();
+		log.PV_Milestones_assesment(driver).click();
+		log.ClickOn_Back_Btn(driver).click();
+		driver.quit();
+	}
+
+	@Then("Student should able Click any PV_Milestone")
+	public void studentShouldAbleClickAnyPV_Milestone() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PV_Milestones(driver).click();
+		log.ClickOn_PV_Milestone_Number(driver).click();
+		driver.quit();
+	}
+
+	//no
+	@Then("Student should able to remove Upload document option")
+	public void studentShouldAbleToRemoveUploadDocumentOption() {
+
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PV_Milestones(driver).click();
+		log.PV_Milestones_assesment(driver).click();
+		log.ClickOn_ReSubmit_Assesment(driver).click();
+
+	}
+
+	@Then("Student should able to check status")
+	public void studentShouldAbleToCheckStatus() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PV_Milestones(driver).click();
+		log.PV_Milestones_assesment(driver).click();
+		driver.quit();
+	}
+
+
+
+
+
+
+	
 }
