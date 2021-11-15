@@ -1,7 +1,7 @@
 Feature: Login Wadhwani
 
   @tag1
-  Scenario Outline: Login Functionality with valid credentials
+  Scenario Outline: FA_01,FA_24Login Functionality with valid credentials
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter valid "<username>"
     Then Faculty should verify success message
@@ -11,7 +11,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com |
 
   @tag2
-  Scenario Outline: Login Functionality with invalid credentials
+  Scenario Outline: FA_25 Login Functionality with invalid credentials
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter invalid "<username>"
     Then Faculty should verify its enter success message
@@ -21,7 +21,7 @@ Feature: Login Wadhwani
       | qapital.com |
 
   @tag3
-  Scenario Outline: Login Functionality with invalid password
+  Scenario Outline: FA_2,FA_3,FA_26,FA_27Login Functionality with invalid password
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter invalid "<username>"
     And Faculty should click next Button
@@ -33,7 +33,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com |     1234 |
 
   @tag4
-  Scenario Outline: Signin Button is click or not
+  Scenario Outline: FA_28 Signin Button is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter invalid "<username>"
     And Faculty should click next Button
@@ -46,7 +46,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com |     1234 |
 
   @tag5
-  Scenario Outline: Forgot password is click or not
+  Scenario Outline: FA_29 Forgot password is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -58,7 +58,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com |
 
   @tag6
-  Scenario Outline: Signin button is click or not with valid password
+  Scenario Outline: FA_31 Signin button is click or not with valid password
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -71,7 +71,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag7
-  Scenario Outline: Dashboard is click or not
+  Scenario Outline: FA_32, FA_33, FA_34Dashboard is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -85,7 +85,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag8
-  Scenario Outline: Index is click or not
+  Scenario Outline:  FA_35 Index is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -100,7 +100,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag9
-  Scenario Outline: Resume is click or not
+  Scenario Outline:  FA_36Resume is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -115,7 +115,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag10
-  Scenario Outline: course plan is click or not
+  Scenario Outline: FA_37 course plan is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -130,7 +130,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag11
-  Scenario Outline: other course is click or not
+  Scenario Outline: FA_38, FA_39 other course is click or not
     Given Faculty is on the Learnwise Login Page
     When Faculty should enter an valid email"<username>"
     And Faculty click the next Button
@@ -145,7 +145,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag12
-  Scenario Outline: Joining courses
+  Scenario Outline:  FA_40, FA_41, FA_42, FA_43 Verify Faculty should able to click on start courses or not
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -157,7 +157,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag13
-  Scenario Outline: Click on create Batch
+  Scenario Outline:  FA_44 Click on create Batch
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -169,7 +169,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag14
-  Scenario Outline: Entering Batch Details
+  Scenario Outline: FA_45 Entering Batch Details
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -181,7 +181,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag15
-  Scenario Outline: Copy Batch Details
+  Scenario Outline: FA_46 Copy Batch Details
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -193,7 +193,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag16
-  Scenario Outline: Enter copy batch details
+  Scenario Outline: FA_47,FA_48,FA_49 Enter copy batch details
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -205,7 +205,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag17
-  Scenario Outline: Clicking on Start Course
+  Scenario Outline: FA_50Clicking on Start Course
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -217,7 +217,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag18
-  Scenario Outline: Changing Batch
+  Scenario Outline: FA_51Changing Batch
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -229,7 +229,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag19
-  Scenario Outline: Faculty should give mock test
+  Scenario Outline: FA_52,FA_53 Faculty should give mock test
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -241,7 +241,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag20
-  Scenario Outline: Faculty should take Quizzes
+  Scenario Outline: FA_54,FA_55,FA_56 Faculty should take Quizzes
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -253,7 +253,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag21
-  Scenario Outline: Faculty taking Quizzes
+  Scenario Outline: FA_57,FA_58Faculty taking Quizzes
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -265,7 +265,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag22
-  Scenario Outline: Faculty should view quizz results
+  Scenario Outline: FA_59,FA_60,FA_61Faculty should view quizz results
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -277,7 +277,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag23
-  Scenario Outline: Faculty should take quizz
+  Scenario Outline: FA_62,FA_63,FA_64 Faculty should take quizz
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -289,7 +289,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag24
-  Scenario Outline: Verify Faculty should view Practice Venture
+  Scenario Outline: FA_65-FA_69Verify Faculty should view Practice Venture
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -301,7 +301,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag25
-  Scenario Outline: Verify Faculty should view PV Milestones
+  Scenario Outline: FA_70-FA_76Verify Faculty should view PV Milestones
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -313,7 +313,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag26
-  Scenario Outline: Verify Faculty should click on faculty notes
+  Scenario Outline: FA_77 Verify Faculty should click on faculty notes
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -325,7 +325,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag27
-  Scenario Outline: Verify Faculty should see the lessons
+  Scenario Outline: FA_78Verify Faculty should see the lessons
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -337,7 +337,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag28
-  Scenario Outline: Verify Faculty should click on report tab
+  Scenario Outline: FA_92-FA_94Verify Faculty should click on report tab
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -349,7 +349,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag29
-  Scenario Outline: Verify Faculty should click on Notification icon
+  Scenario Outline: FA_95,FA_96Verify Faculty should click on Notification icon
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -385,7 +385,7 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag32
-  Scenario Outline: Faculty should be in Manage Batches
+  Scenario Outline: FA_79Faculty should be in Manage Batches
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
@@ -426,7 +426,7 @@ Feature: Login Wadhwani
   #When Faculty should see the Manage Students
   #Then Faculty should click on Manage Students
   @tag33
-  Scenario Outline: Faculty should be in Run lessons
+  Scenario Outline: FA_87 Faculty should be in Run lessons
     Given Faculty is on  Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"

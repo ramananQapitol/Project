@@ -35,10 +35,7 @@ public class LoginPomStudent {
 	public static WebElement ClickOn_Reg_SignIn(WebDriver driver) {
 		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/header/div/div/div[2]/div/div/div/div[2]/form/button"));
 	}
-	
-	
-
-	public static WebElement Enter_PassKey(WebDriver driver) {
+public static WebElement Enter_PassKey(WebDriver driver) {
 		return driver.findElement(By.xpath("//input[@id='password']"));
 	}
 
@@ -73,8 +70,7 @@ public static WebElement ClickOn_InstituteCode(WebDriver driver) {
 	public static WebElement ClickOn_Join(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'JOIN')]"));
 	}
-
-	public static WebElement Enter_BatchId(WebDriver driver) {
+public static WebElement Enter_BatchId(WebDriver driver) {
 		return driver.findElement(By.xpath("//input[@id='batchUniqueID']"));
 	}
 	public static WebElement Clicking_On_BatchName(WebDriver driver) {
@@ -159,9 +155,7 @@ public static WebElement ClickOn_InstituteCode(WebDriver driver) {
 	public static WebElement ClickOn_Edit_Cancel(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'CANCEL')]"));
 	}
-
-	
-	public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
+public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[2]/div[2]/button/span"));
 	}
 
@@ -176,7 +170,16 @@ public static WebElement ClickOn_InstituteCode(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'Reports')]//following::img[1]"));
 	}
 	public static WebElement ClickOn_AssesmentReports(WebDriver driver) {
-		return driver.findElement(By.xpath("//ul[@id='legend']//following::div[5]"));
+		return driver.findElement(By.xpath("//*[@id=\"student_finalassessment_report\"]/thead/tr/td[1]"));
+	}
+	public static WebElement Download_AssesmentReports(WebDriver driver) {
+		return driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div[2]/div[7]/img"));
+	}
+	public static WebElement ClickOnDelete_venturegroup(WebDriver driver) {
+		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div[7]/div/div[3]/div/span/i"));
+	}
+	public static WebElement ClickOn_yesToDelete_venturegroup(WebDriver driver) {
+		return driver.findElement(By.xpath("//*[@id=\"dialogContent_30\"]/div/form/md-dialog-actions/button[2]/span"));
 	}
 	public static WebElement ClickOn_ReSubmit_Assesment(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'Re-Submit')]"));
@@ -188,6 +191,6 @@ public static WebElement ClickOn_InstituteCode(WebDriver driver) {
 	public static WebElement ClickOn_PV_Milestone_Number(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'PV Milestones')]//following::td[2]"));
 	}
-
+	
 
 }

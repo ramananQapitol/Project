@@ -31,33 +31,75 @@ public class StepDefinitionStudent {
 		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+
 	}
 
 	@When("Student should enter valid {string}")
 	public void studentShouldEnterValid(String string) {
 		log.UserName(driver).sendKeys(string);
-	}
-
-	@And("Student should select next Button")
-	public void studentShouldSelectNextButton() throws Exception {
-		System.out.println("Entering Mail Id");	
+		System.out.println("Entering Mail Id");
 
 	}
 
-	@Then("Student should verify success message")
-	public void studentShouldVerifySuccessMessage() throws Exception {
-		Thread.sleep(3000);
-		driver.quit();
+
+
+
+	@Then("Student should verify Next Button is enabled or not")
+	public void studentShouldVerifyNextButtonIsEnabledOrNot() {
+		WebElement NXT_Btn= driver.findElement(By.xpath("//button[@type='submit']"));
+		if(NXT_Btn.isEnabled()) {
+			log.NextBtn(driver).click();
+			driver.quit();
+		}
+		else {
+			driver.quit();
+		}
+
 	}
 
-	@Given("Student should be in Login Page")
-	public void studentShouldBeInLoginPage() {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	@Then("Student should click Next Button")
+	public void studentShouldClickNextButton() {
+		log.NextBtn(driver).click();
 	}
+	@When("Student should EnteR valid password {string}")
+	public void studentShouldEnteRValidPassword(String string) {
+		log.NextBtn(driver).click();
+		log.Enter_PassKey(driver).sendKeys(string);
+	}
+
+
+
+
+	@Then("student is able to create to the new venture group without providing the mandatory details")
+	public void studentIsAbleToCreateToTheNewVentureGroupWithoutProvidingTheMandatoryDetails() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PracticeVenture(driver).click();
+		log.Create_VentureGroup(driver).click();
+
+
+		WebElement Create_Btn= driver.findElement(By.xpath("//div[contains(text(),'Select a group to join or add a new group')]//following::div[8]"));
+		if(Create_Btn.isEnabled()) {
+			log.Click_Create_Venture(driver).click();
+			driver.quit();
+		}
+		else {
+			driver.quit();
+		}
+	}
+
+	@Then("student is able to change the batch  name while creating the Venture group.")
+	public void studentIsAbleToChangeTheBatchNameWhileCreatingTheVentureGroup() {
+
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.ClickOn_PracticeVenture(driver).click();
+		log.Create_VentureGroup(driver).click();
+
+
+	}
+	//===================================================================
+
 
 	@When("Student should not enter any mail id {string}")
 	public void studentShouldNotEnterAnyMailId(String string) {
@@ -69,22 +111,10 @@ public class StepDefinitionStudent {
 		System.out.println("Entering Mail and clicking next Btn");
 	}
 
-	@Then("Student should verify its enabled or not")
-	public void studentShouldVerifyItsEnabledOrNot() throws Exception {
-		log.NextBtn(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
-	}
 
-	@Given("Student should enter {string}")
-	public void studentShouldEnter(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-	}
+
+
+
 
 	@When("Student should click on next button")
 	public void studentShouldClickOnNextButton() {
@@ -95,20 +125,10 @@ public class StepDefinitionStudent {
 	public void studentShouldAbleToEnterPassword(String string) throws InterruptedException {
 		log.Enter_Password(driver).sendKeys(string);
 		System.out.println("Entered password");
-		Thread.sleep(3000);
-		driver.quit();
 	}
 
 
-	@Given("Student should ENteR {string}")
-	public void studentShouldENteR(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-	}
+
 
 	@When("Student should click on NEXT button")
 	public void studentShouldClickOnNEXTButton() {
@@ -125,18 +145,8 @@ public class StepDefinitionStudent {
 		log.Confirm_Password(driver).sendKeys(string);
 		log.ClickOn_checkBox(driver).click();
 		System.out.println("Not able to click on SignIn Btn");
-		driver.quit();
 	}
-@Given("Student should be in Learnwise Login Page")
-	public void studentShouldBeInLearnwiseLoginPage() {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-
-	}
 
 	@When("Student should enter valid email{string}")
 	public void studentShouldEnterValidEmail(String string) {
@@ -173,39 +183,20 @@ public class StepDefinitionStudent {
 		driver.findElement(By.xpath("//*[@id=\"select_option_13\"]")).click();
 		log.ClickOn_Reg_SignIn(driver).click();
 
-		driver.quit();
 	}
-@Given("Student should Enter valid UserName {string}")
-	public void studentShouldEnterValidUserName(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-	}
+
 
 	@When("Student should able to enter valid password {string}")
 	public void studentShouldAbleToEnterValidPassword(String string) {
 		log.Enter_PassKey(driver).sendKeys(string);
 
 	}
-
-	@And("Student should click on signIn")
+@And("Student should click on signIn")
 	public void studentShouldClickOnSignIn() {
 		log.ClickOn_SignIn(driver).click();
-		driver.quit();
 	}
 
-	@Given("Student should Enter valid UserNamE {string}")
-	public void studentShouldEnterValidUserNamE(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-	}
+
 
 	@When("Student should click on nextBTN")
 	public void studentShouldClickOnNextBTN() {
@@ -220,26 +211,12 @@ public class StepDefinitionStudent {
 
 	@Then("Student should click on signIN Btn")
 	public void studentShouldClickOnSignINBtn() {
-		driver.quit();
+		System.out.println("Student should click on signIN Btn");
 	}
 
 
 
-	@Given("Student should EnTer VALid UserNamE {string}")
-	public void studentShouldEnTerVALidUserNamE(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-	}
 
-	@When("Student should  EnteR valid password {string}")
-	public void studentShouldEnteRValidPassword(String string) {
-		log.NextBtn(driver).click();
-		log.Enter_PassKey(driver).sendKeys(string);
-	}
 
 	@When("Student should in HOME Page")
 	public void studentShouldInHOMEPage() {
@@ -247,41 +224,28 @@ public class StepDefinitionStudent {
 	}
 
 	@Then("Student should able to see Hamburger")
-	public void studentShouldAbleToSeeHamburger() {
-		driver.quit();
+	public void studentShouldAbleToSeeHamburger() throws InterruptedException {
+		Thread.sleep(1000);
 	}
 	@Then("Student should able to click on Hamburger")
 	public void studentShouldAbleToClickOnHamburger() throws Exception {
 		log.ClickOn_Hamburger(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
 	}
 	@Then("Student should see start or resume button")
 	public void studentShouldSeeStartOrResumeButton() throws Exception {
 		System.out.println("Student able to see start or resume button");
-		Thread.sleep(3000);
-		driver.quit();
+
 	}
 	@Then("Student should click on start or resume button")
 	public void studentShouldClickOnStartOrResumeButton() throws Exception {
 		Thread.sleep(3000);
 		log.ClickOn_StartOrResume(driver).click();
-		driver.quit();
 	}
 	@Then("Student should click on Course Module")
 	public void studentShouldClickOnCourseModule() throws Exception {
 		log.ClickOn_Courses(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
 	}
-@Then("Student should see Join Course is enabled or not")
-	public void studentShouldSeeJoinCourseIsEnabledOrNot() throws Exception {
-		log.ClickOn_Courses(driver).click();
-		System.out.println("join Course module ");
-		Thread.sleep(3000);
-		log.ClickOn_Join(driver).click();
-		driver.quit();
-	}
+
 
 	@When("Student should enter Batch id{string}")
 	public void studentShouldEnterBatchId(String string) {
@@ -292,16 +256,12 @@ public class StepDefinitionStudent {
 	@Then("Student should click on Join Course")
 	public void studentShouldClickOnJoinCourse() throws Exception {
 		log.ClickOn_Join(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
 	}
 
 	@Then("Student should click o Batch Name")
 	public void studentShouldClickOBatchName() throws Exception {
 		log.ClickOn_Courses(driver).click();
 		log.Clicking_On_BatchName(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
 
 	}
 
@@ -311,7 +271,6 @@ public class StepDefinitionStudent {
 		log.ClickOn_Courses(driver).click();
 		log.Clicking_On_ChatIcon(driver).click();
 		Thread.sleep(3000);
-		driver.quit();
 	}
 
 	@Then("Student should click batchName and click on Quizzes")
@@ -324,14 +283,10 @@ public class StepDefinitionStudent {
 		log.ClickOn_save_continue(driver).click();
 		Thread.sleep(3000);
 		log.ClickOn_Back(driver).click();
-		//log.ClickOn_Option(driver).click();
-		driver.quit();
 	}
-
-	@Then("Student should click on Take Quiz")
+@Then("Student should click on Take Quiz")
 	public void studentShouldClickOnTakeQuiz() throws Exception {
-
-		driver.quit();
+		System.out.println("Student should click on Take Quiz");
 	}
 
 	@When("Student should click courses")
@@ -376,18 +331,15 @@ public class StepDefinitionStudent {
 		log.Select_Venture_Industry(driver).click();
 		log.Click_Create_Venture(driver).click();
 
-		driver.quit();
 	}
 	@Then("student should click on create group")
 	public void studentShouldClickOnCreateGroup() throws Exception {
-		Thread.sleep(3000);
-		driver.quit();
+		Thread.sleep(1000);
 	}
 
 	@Then("student should delete Practice venture group")
 	public void studentShouldDeletePracticeVentureGroup() throws Exception {
-		Thread.sleep(3000);
-		driver.quit();
+		Thread.sleep(1000);
 	}
 
 	@Then("Student should click on PV Milestones")
@@ -396,49 +348,45 @@ public class StepDefinitionStudent {
 		Thread.sleep(3000);
 		log.PV_Milestones_assesment(driver).click();
 		driver.findElement(By.xpath("//span[contains(text(),'Re-Submit ')]")).click();
-		
-		driver.quit();
+
 	}
 	@Then("Student should click on PV Milestone assesment")
 	public void studentShouldClickOnPVMilestoneAssesment() throws Exception {
 		Thread.sleep(3000);
-	   log.PV_Milestones_assesment(driver).click();
-	   Thread.sleep(3000);
-	   driver.quit();
+		log.PV_Milestones_assesment(driver).click();
 	}
 	@Then("student click resume")
 	public void studentClickResume() {
-	    driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div/div/div[2]/div[3]/div[1]/a/div")).click();
+		driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div/div/div[2]/div[3]/div[1]/a/div")).click();
 	}
 
 	@Then("Student click on PV milestones Button")
 	public void studentClickOnPVMilestonesButton() {
-	   driver.findElement(By.xpath("//*[@id=\"superfish-2\"]/li[6]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"superfish-2\"]/li[6]/a")).click();
 	}
 
 	@Then("Student click on any assignment")
 	public void studentClickOnAnyAssignment() {
-	   driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]/span")).click();
+		driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]/span")).click();
 	}
 
 	@Then("Student click on view submission")
 	public void studentClickOnViewSubmission() {
-	    driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[1]/div/span")).click();
-	    driver.quit();
+		driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[1]/div/span")).click();
 	}
 	@Then("Student click milestone {int}")
 	public void studentClickMilestone(Integer int1) {
-	    driver.findElement(By.xpath("//*[@id=\"myassignments-table\"]/a[2]/div/table/tbody/tr[1]/td[2]  ")).click();
+		driver.findElement(By.xpath("//*[@id=\"myassignments-table\"]/a[2]/div/table/tbody/tr[1]/td[2]  ")).click();
 	}
 
 	@Then("Student click on view submit")
 	public void studentClickOnViewSubmit() throws InterruptedException {
-	    driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]")).click();
-	   
+		driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]")).click();
+
 	}
 	@Then("verify it enter or not")
-	public void verifyItEnterOrNot() {
-	    driver.quit();
+	public void verifyItEnterOrNot() throws InterruptedException {
+		Thread.sleep(1000);
 	}
 	@Then("Student click on attempt button")
 	public void studentClickOnAttemptButton() {
@@ -446,24 +394,15 @@ public class StepDefinitionStudent {
 
 		WebElement Submit=driver.findElement(By.xpath("//*[@id=\"edit-submit\"]"));
 		js.executeScript("arguments[0].click()",Submit);
-		
-		
-	    
+
+
+
 	}
-	@Then("verify it click or not")
+@Then("verify it click or not")
 	public void verifyItClickOrNot() {
-	    driver.quit();
+		System.out.println("verify it click or not");
 	}
-	@Given("Student should EnTer UserNamE {string} and click on next")
-	public void studentShouldEnTerUserNamEAndClickOnNext(String string) {
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		log.UserName(driver).sendKeys(string);
-		log.NextBtn(driver).click();
-	}
+
 
 	@When("Student should  EnteR password {string} and click on signin")
 	public void studentShouldEnteRPasswordAndClickOnSignin(String string) {
@@ -485,7 +424,6 @@ public class StepDefinitionStudent {
 		Thread.sleep(3000);
 		log.ClickOn_Edit_InstitueCode(driver).click();
 		Thread.sleep(3000);
-		//	    log.ClickOn_Edit_Language(driver).click();
 		Thread.sleep(3000);
 		log.ClickOn_Edit_ChangePassword(driver).click();
 		Thread.sleep(3000);
@@ -498,7 +436,6 @@ public class StepDefinitionStudent {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
 		Thread.sleep(5000);
-		driver.quit();
 	}
 
 	@Then("Student should Click on Notification icon")
@@ -510,7 +447,6 @@ public class StepDefinitionStudent {
 	@Then("Student should view Notifications")
 	public void studentShouldViewNotifications() {
 		log.ClickOn_Notifications(driver).click();
-		driver.quit();
 	}
 
 	@Then("Student should Click on Reports")
@@ -518,7 +454,6 @@ public class StepDefinitionStudent {
 		log.ClickOn_Courses(driver).click();
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_Reports(driver).click();
-		driver.quit();
 
 	}
 
@@ -527,21 +462,7 @@ public class StepDefinitionStudent {
 		log.ClickOn_Courses(driver).click();
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_Reports(driver).click();
-		driver.quit();
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -559,8 +480,6 @@ public class StepDefinitionStudent {
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_Reports(driver).click();
 		log.Download_QuizzReport(driver).click();
-		Thread.sleep(3000);
-		driver.quit();
 	}
 
 	@Then("Student should view final assesment report")
@@ -570,16 +489,14 @@ public class StepDefinitionStudent {
 		log.ClickOn_Reports(driver).click();
 		Thread.sleep(3000);
 		log.ClickOn_AssesmentReports(driver).click();
-		driver.quit();
 	}
-@Then("Student should able Click on Submit Button")
+	@Then("Student should able Click on Submit Button")
 	public void studentShouldAbleClickOnSubmitButton() {
 		log.ClickOn_Courses(driver).click();
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_PV_Milestones(driver).click();
 		log.PV_Milestones_assesment(driver).click();
 		log.ClickOn_ReSubmit_Assesment(driver).click();
-		//    driver.quit();
 	}
 
 	@Then("Student should able Click on Back Button")
@@ -589,7 +506,6 @@ public class StepDefinitionStudent {
 		log.ClickOn_PV_Milestones(driver).click();
 		log.PV_Milestones_assesment(driver).click();
 		log.ClickOn_Back_Btn(driver).click();
-		driver.quit();
 	}
 
 	@Then("Student should able Click any PV_Milestone")
@@ -598,11 +514,8 @@ public class StepDefinitionStudent {
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_PV_Milestones(driver).click();
 		log.ClickOn_PV_Milestone_Number(driver).click();
-		driver.quit();
 	}
-
-	//no
-	@Then("Student should able to remove Upload document option")
+@Then("Student should able to remove Upload document option")
 	public void studentShouldAbleToRemoveUploadDocumentOption() {
 
 		log.ClickOn_Courses(driver).click();
@@ -619,13 +532,118 @@ public class StepDefinitionStudent {
 		log.Clicking_On_BatchName(driver).click();
 		log.ClickOn_PV_Milestones(driver).click();
 		log.PV_Milestones_assesment(driver).click();
+	}
+@Then("Student should Click on Quizzes")
+	public void studentShouldClickOnQuizzes() {
+		log.ClickOn_Courses(driver).click();
+		log.Clicking_On_BatchName(driver).click();
+		log.Clicking_On_Quizzes(driver).click();
+	}
+@Then("Student should see Join Course is enabled or not")
+	public void studentShouldSeeJoinCourseIsEnabledOrNot() throws Exception {
+		log.ClickOn_Courses(driver).click();
+		System.out.println("join Course module ");
+		Thread.sleep(3000);
+		WebElement Join_Btn=driver.findElement(By.xpath("//span[contains(text(),'JOIN')]"));
+
+		if(Join_Btn.isEnabled()) {
+			log.ClickOn_Join(driver).click();
+			driver.quit();
+		}
+		else {
+			driver.quit();
+		}
+
+	}
+
+	@Then("Student should able to click on No Button or not.")
+	public void studentShouldAbleToClickOnNoButtonOrNot() throws InterruptedException {
+		log.ClickOn_Courses(driver).click();
+
+	}
+
+	@Then("Student should close the browser")
+	public void studentShouldCloseTheBrowser() throws InterruptedException {
+		Thread.sleep(5000);
 		driver.quit();
+	}
+
+	
+	//tag1
+	@Given("Student Should Enter Valid User Name {string}")
+	public void studentShouldEnterValidUserName1(String string) {
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	driver.findElement(By.xpath("//input[@id='input_0']")).sendKeys(string);
+	}
+
+	@When("Student should click on next Button")
+	public void studentShouldClickOnNextButton1() {
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+	}
+
+	@Then("Student should enter the valid Password {string}")
+	public void studentShouldEnterTheValidPassword1(String string) {
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys(string);
+		//driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+	}
+
+	@Then("Student should click on the signin Button")
+	public void studentShouldClickOnTheSigninButton() {
+
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+	 //driver.quit();	
+	}
+
+
+	//tag2
+	@Then("Student should click on resume\\/start button")
+	public void studentShouldClickOnResumeStartButton() {
+
+		driver.findElement(By.xpath("//div[@class=\"faculty_activities_title\"] //following::div[13]")).click();
+		//driver.quit();
+
+	}
+	//tag3
+	@Then("click on pvmilestones tab")
+	public void clickOnPvmilestonesTab() {
+		driver.findElement(By.xpath("//a[@title=\"PV Milestones\"]")).click();
+	}
+
+
+	//tag4
+	@Then("click on pvmilestones tab and check whether the student is able to view the assignments.")
+	public void clickOnPvmilestonesTabAndCheckWhetherTheStudentIsAbleToViewTheAssignments() {
+		driver.findElement(By.xpath("//a[@title=\"PV Milestones\"]")).click();
+
+	}
+	//tag5
+	@Then("clik on view details button")
+	public void clikOnViewDetailsButton() {
+		driver.findElement(By.xpath("//div [@id='assignment_submit_att' and @nid='45544812' ]\n")).click();
+
+	}
+	//tag6
+	@Then("click on viewsubmission  button in the selected pv milestone assignment.")
+	public void clickOnViewsubmissionButtonInTheSelectedPvMilestoneAssignment() {
+
+		driver.findElement(By.xpath("//span[contains(text(),'View Submission ')]")).click();
+//		driver.quit();
+	}
+@Then("click on resubmit button.")
+	public void clickOnResubmitButton() {
+		driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[2]/div"));
+//		//.sendKeys("/home/qq382/Desktop.txt");
+//	}
+driver.quit();
+}
+
 	}
 
 
 
-
-
-
-	
-}

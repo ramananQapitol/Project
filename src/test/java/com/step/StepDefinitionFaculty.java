@@ -31,18 +31,14 @@ public class StepDefinitionFaculty{
 	WebDriver driver;
 	log Logger =new log();
 	
-   
+   LoginPom pom = new LoginPom();
 	@Given("Faculty is on the Learnwise Login Page")
 	public void facultyIsOnTheLearnwiseLoginPage() {
-		
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-      
-		driver.get("https://learnwise.wfglobal.org/");
-		
-		driver.manage().window().maximize();
-	    
-		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		       WebDriverManager.chromedriver().setup();
+			    driver=new ChromeDriver();
+				driver.get("https://learnwise.wfglobal.org");
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		
 	}
 	@When("Faculty should enter valid {string}")
