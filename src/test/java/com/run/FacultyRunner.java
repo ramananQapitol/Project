@@ -9,13 +9,14 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features= {"Features/loginstudent.feature"},glue= {"com.step"},
 
-tags= {"@tag1"},
+tags= {"@tag46"},
 monochrome=true,dryRun=false,snippets = SnippetType.CAMELCASE,
 plugin = {"pretty","html:test-output"})
 
 
 
 public class FacultyRunner {
+	
 
 }
 

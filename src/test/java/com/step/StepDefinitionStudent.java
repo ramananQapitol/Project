@@ -642,6 +642,29 @@ public class StepDefinitionStudent {
 //	}
 driver.quit();
 }
+@And("student should click on submit")
+public void student_should_click_on_submit() {
+	driver.findElement(By.xpath("//span[contains(text(),'Submit')]")).click();
+}
+@And("student should click on close icon")
+public void student_should_click_on_close_icon() {
+	driver.findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-closethick']")).click();;
+}
+
+@And("student should click on back button")
+public void student_should_click_on_back_button() {
+	driver.findElement(By.xpath("//*[@id=\"assg-attempt-display-content\"]/a")).click();;
+}
+@And("student should click on mile stone")
+public void student_should_click_on_mile_stone() {
+	driver.findElement(By.xpath("//*[@id=\"myassignments-table\"]/a[1]/div/table/tbody/tr[1]/td[2]")).click();;
+}
+
+@Then("student should close the browers")
+public void student_should_close_the_browers() {
+    driver.quit();
+}
+
 
 	}
 

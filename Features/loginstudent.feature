@@ -633,62 +633,22 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-      
-     @tag46
-  Scenario Outline: Check Student should be in home page of learn wise
-    Given Student should Enter valid UsernamE "<username>"
-    When Student should cLick on nextBTN
-    Then Student should able to enter  valid password "<pass>"
-    And Student should click on signIN Btn
-    Then student should close the brower
-    
 
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-      
-      
-@tag47
-  Scenario Outline: Check Student should be in pv milestone page of learn wise
-  
-    Given Student should Enter valid UsernamE "<username>"
-    When Student should cLick on nextBTN
-    Then Student should able to enter  valid password "<pass>"
-    And Student should click on signIN Btn
-    When Student should click on resume
-    And Student should click on pv_milestone
-    Then student should close the brower
-    
-    
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-    
-@tag48
- Scenario Outline: Check Student should be able to submit assisment
-
-  
-   Given Student should Enter valid UsernamE "<username>"
-    When Student should cLick on nextBTN
-    Then Student should able to enter  valid password "<pass>"
-    And Student should click on signIN Btn
-    When Student should click on resume
-    And Student should click on pv_milestone
-    When student should click on view details
+  @tag46
+  Scenario Outline: Check Student should be able to submit assisment
+    Given Student Should Enter Valid User Name "<username>"
+    When Student should click on next Button
+    Then Student should enter the valid Password "<pass>"
+    And Student should click on the signin Button
+    And Student should click on resume/start button
+    Then click on pvmilestones tab and check whether the student is able to view the assignments.
+    Then clik on view details button
     And student should click on submit
     And student should click on close icon
     And student should click on back button
     And student should click on mile stone
     Then student should close the browers
-     
+
     Examples: 
       | username                |  | pass |
-      | student1212@yopmail.com |  | pass | 
-      
-      
-      
-      
-      
-      
-      
-      
+      | student1212@yopmail.com |  | pass |
