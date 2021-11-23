@@ -83,9 +83,7 @@ public class StepDefinitionStudent {
 			log.Click_Create_Venture(driver).click();
 			driver.quit();
 		}
-		else {
-			driver.quit();
-		}
+		
 	}
 
 	@Then("student is able to change the batch  name while creating the Venture group.")
@@ -335,7 +333,12 @@ public class StepDefinitionStudent {
 	@Then("student should click on create group")
 	public void studentShouldClickOnCreateGroup() throws Exception {
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[contains(text(),'Group Name')]//following::span[1]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[contains(text(),'Yes')]")).click();
+		
 	}
+	
 
 	@Then("student should delete Practice venture group")
 	public void studentShouldDeletePracticeVentureGroup() throws Exception {
@@ -642,6 +645,33 @@ public class StepDefinitionStudent {
 //	}
 driver.quit();
 }
+@Then("Student should create Practice venture group")
+public void studentShouldCreatePracticeVentureGroup() {
+    log.ClickOn_PracticeVenture(driver).click();
+	log.Create_VentureGroup(driver).click();
+	log.VentureGroup_Name(driver).sendKeys("Mohan");
+	log.Venture_Name(driver).sendKeys("kumar");
+	log.Venture_Description(driver).sendKeys("Welcome All");
+	log.Venture_Industry(driver).click();
+	log.Select_Venture_Industry(driver).click();
+	log.Click_Create_Venture(driver).click();
+}
+
+
+
+@Then("Student should edit Batch Id")
+public void studentShouldEditBatchId() throws InterruptedException {
+	Thread.sleep(5000);
+	
+	driver.findElement(By.xpath("//img[@class='edit_icon']")).click();
+	driver.findElement(By.xpath("//input[@id='input_32']")).sendKeys("1");
+	driver.findElement(By.xpath("//span[contains(text(),'Yes')]")).click();
+	driver.findElement(By.xpath("//span[contains(text(),'SAVE CHANGES')]")).click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//div[contains(text(),'Group Name')]//following::span[1]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//span[contains(text(),'Yes')]")).click();
+}
 @And("student should click on submit")
 public void student_should_click_on_submit() {
 	driver.findElement(By.xpath("//span[contains(text(),'Submit')]")).click();
@@ -663,6 +693,73 @@ public void student_should_click_on_mile_stone() {
 @Then("student should close the browers")
 public void student_should_close_the_browers() {
     driver.quit();
+}
+@When("Student should Enter institute code")
+public void student_should_Enter_institute_code() {
+	driver.findElement(By.xpath("//*[@id=\"input_2\"]")).sendKeys("QAPI5260");
+}
+
+@When("Student should Enter re enter mail id")
+public void student_should_Enter_re_enter_mail_id() {
+	driver.findElement(By.xpath("//*[@id=\"input_3\"]")).sendKeys("student1214@yopmail.com");
+}
+@When("Student should Enter new Password")
+public void student_should_Enter_new_Password() {
+	driver.findElement(By.xpath("//*[@id=\"input_4\"]")).sendKeys("pass");
+}
+@When("Student should Enter random confirm password {string}")
+public void student_should_Enter_random_confirm_password(String string) {
+	driver.findElement(By.xpath("//*[@id=\"input_5\"]")).sendKeys("123");
+}
+
+@When("Student should select landuage")
+public void student_should_select_landuage() {
+	driver.findElement(By.xpath("//md-select[@name=\"language\"]")).click();
+	driver.findElement(By.xpath("//*[@id=\"select_option_13\"]")).click();
+}
+
+@When("Student should  click on check box")
+public void student_should_click_on_check_box() {
+	driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/header/div/div/div[2]/div/div/div/div[2]/form/div/md-checkbox/div[1]")).click();
+}
+
+@When("Student should  click on sign in")
+public void Student_should_click_on_sign_in() {
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+}
+@Then("student should click on cancel group")
+public void studentShouldClickOnCancelGroup() throws InterruptedException {
+	 log.ClickOn_PracticeVenture(driver).click();
+		log.Create_VentureGroup(driver).click();
+		log.VentureGroup_Name(driver).sendKeys("Mohan");
+		log.Venture_Name(driver).sendKeys("kumar");
+		log.Venture_Description(driver).sendKeys("Welcome All");
+		log.Venture_Industry(driver).click();
+		log.Select_Venture_Industry(driver).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[contains(text(),'CANCEL')]")).click();
+}
+
+
+@Then("student should click create group")
+public void studentShouldClickCreateGroup() throws InterruptedException {
+ log.ClickOn_PracticeVenture(driver).click();
+	log.Create_VentureGroup(driver).click();
+	log.VentureGroup_Name(driver).sendKeys("Mohan");
+	log.Venture_Name(driver).sendKeys("kumar");
+	log.Venture_Description(driver).sendKeys("Welcome All");
+	
+	
+	WebElement Create_Btn= driver.findElement(By.xpath("//div[contains(text(),'Select a group to join or add a new group')]//following::div[8]"));
+	if(Create_Btn.isEnabled()) {
+		log.Click_Create_Venture(driver).click();
+		driver.quit();
+	}
+	else {
+		Thread.sleep(3000);
+		driver.quit();
+	}
+
 }
 
 

@@ -33,7 +33,7 @@ Feature: Login cucumber
       |          |
 
   @tag4
-  Scenario Outline: LW_TC_04 Verify if Student is able to see the Student Login page after clicking on the next button
+  Scenario Outline: LW_TC_04,14,15,16 Verify if Student is able to see the Student Login page after clicking on the next button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
@@ -42,7 +42,7 @@ Feature: Login cucumber
     Examples: 
       | username               |
       | student987@yopmail.com |
-
+| student9876@yopmail.com |
   @tag5
   Scenario Outline: LW_TC_05 Verify if Student can enter the password in New password textfield
     Given Student is on the Learnwise Login Page
@@ -97,7 +97,7 @@ Feature: Login cucumber
       | student246@yopmail.com | QAPI5260 | student246@yopmail.com | ADMIadmin | ADMIadmin |
 
   @tag9
-  Scenario Outline: LW_TC_19 Verify whether the student is able to redirect to the home page if he enters the valid emailid
+  Scenario Outline: LW_TC_17,19 Verify whether the student is able to redirect to the home page if he enters the valid emailid
     and valid password.
 
     Given Student is on the Learnwise Login Page
@@ -112,7 +112,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag10
-  Scenario Outline: LW_TC_20 Verify whether the student is able to login if he uses valid mail id and invalid password
+  Scenario Outline: LW_TC_18,20 Verify whether the student is able to login if he uses valid mail id and invalid password
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     When Student should click on next button
@@ -258,7 +258,6 @@ Feature: Login cucumber
     When Student should click on next button
     Then Student should able to enter valid password "<pass>"
     And Student should in HOME Page
-    Then Student should click batchName and click on Quizzes module
     Then Student should close the browser
 
     Examples: 
@@ -306,13 +305,14 @@ Feature: Login cucumber
     When Student should click on next button
     Then Student should able to enter valid password "<pass>"
     And Student should in HOME Page
-    Then student is able to change the batch  name while creating the Venture group.
+    And Student should click courses
+    Then Student should create Practice venture group
+    Then Student should edit Batch Id
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
   @tag24
   Scenario Outline: LW_TC_62 Verify whether the Student is able to view the venture members or not.
     Given Student is on the Learnwise Login Page
@@ -511,7 +511,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag38
-  Scenario Outline: Check Student should be click on view submit
+  Scenario Outline: LW_TC_80  Check Student should be click on view submit
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     When Student should click on next button
@@ -528,7 +528,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag39
-  Scenario Outline: Check Student should be in milestone2
+  Scenario Outline: LW_TC_81 Check Student should be in milestone2
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     When Student should click on next button
@@ -546,7 +546,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag40
-  Scenario Outline: Check Student should be click on attempt button and verify error
+  Scenario Outline: LW_TC_83,85Check Student should be click on attempt button and verify error
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     When Student should click on next button
@@ -565,7 +565,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag41
-  Scenario Outline: Check Student should be in home page and see the resume or start button
+  Scenario Outline: LW_TC_86 Check Student should be in home page and see the resume or start button
     Given Student Should Enter Valid User Name "<username>"
     When Student should click on next Button
     Then Student should enter the valid Password "<pass>"
@@ -635,7 +635,7 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag46
-  Scenario Outline: Check Student should be able to submit assisment
+  Scenario Outline: LW_TC_86,90 Check Student should be able to submit assisment
     Given Student Should Enter Valid User Name "<username>"
     When Student should click on next Button
     Then Student should enter the valid Password "<pass>"
@@ -648,6 +648,40 @@ Feature: Login cucumber
     And student should click on back button
     And student should click on mile stone
     Then student should close the browers
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+ @tag47
+  Scenario Outline: LW_TC_52 Verify whether the student is able to cancel the process of creating the
+    Venture group in the middle by clicking on the cancel button.
+
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    When Student should click on next button
+    Then Student should able to enter valid password "<pass>"
+    And Student should in HOME Page
+    And Student should click courses
+    Then student should click on cancel group
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag48
+  Scenario Outline: LW_TC_52 Verify whether the student is able to cancel the process of creating the
+    Venture group in the middle by clicking on the cancel button.
+
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    When Student should click on next button
+    Then Student should able to enter valid password "<pass>"
+    And Student should in HOME Page
+    And Student should click courses
+    Then student should click create group
+    Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
