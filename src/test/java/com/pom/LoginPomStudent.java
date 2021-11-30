@@ -179,7 +179,7 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div[7]/div/div[3]/div/span/i"));
 	}
 	public static WebElement ClickOn_yesToDelete_venturegroup(WebDriver driver) {
-		return driver.findElement(By.xpath("//*[@id=\"dialogContent_30\"]/div/form/md-dialog-actions/button[2]/span"));
+		return driver.findElement(By.xpath("//*[@id=\"dialogContent_0\"]/div/form/md-dialog-actions/button[2]"));
 	}
 	public static WebElement ClickOn_ReSubmit_Assesment(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'Re-Submit')]"));
@@ -191,6 +191,114 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 	public static WebElement ClickOn_PV_Milestone_Number(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'PV Milestones')]//following::td[2]"));
 	}
+	public static WebElement Click_On_DropDown_To_seeLanguage_Options(WebDriver driver) {
+		return driver.findElement(By.xpath("//md-select[@id='select_6']"));
+
+	}
+
+
+	public static WebElement SelectLanguage_Option_Registration(WebDriver driver) {
+		return driver.findElement(By.xpath("//md-option[@id='select_option_13']"));
+
+	}
+
+
+
+
+
+	public static WebElement ClickOn_Edit_Batch(WebDriver driver) {
+		return driver.findElement(By.xpath("//img[@class='edit_icon']"));
+	}
+	public static WebElement ClickOn_Edit_Batch_Name(WebDriver driver) {
+		return driver.findElement(By.xpath("//input[@id='input_32']"));
+	}
+
+	public static WebElement ClickOn_Yes_Edit_Batch_Name(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'Yes')]"));
+	}
+	public static WebElement ClickOn_SaveChanges(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'SAVE CHANGES')]"));
+	}
+	public static WebElement ClickOn_DeleteIcon(WebDriver driver) {
+		return driver.findElement(By.xpath("//div[contains(text(),'Group Name')]//following::span[1]"));
+	}
+	public static WebElement ClickOn_YesToDeleteIcon(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'Yes')]"));
+	}
+
+	public static WebElement ClickOn_CancelBtn(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'CANCEL')]"));
+	}
+
+	public static WebElement Create_Btn1(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[contains(text(),'CANCEL')]"));
+	}
+	public static WebElement LogOut(WebDriver driver) {
+		return driver.findElement(By.xpath("//li[contains(text(),' Logout ')]"));
+	}
+	public static WebElement Accept_To_SignIn(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[contains(text(),'Accept')]"));
+	}
+
+	public static WebElement YOP_Login(WebDriver driver) {
+		return  driver.findElement(By.xpath("//input[@id='login']"));
+	}
+	public static WebElement VerifyYOP_Mail(WebDriver driver) {
+		return  driver.findElement(By.xpath("//i[@class='material-icons-outlined f36']"));
+	}
+
+
+
+	public static WebElement ClickTo_Verify_YOP_Login(WebDriver driver) {
+		return  driver.findElement(By.xpath("//button[text()='Verify Email']"));
+	}
+
+	public static WebElement Click_FinalAssesment_Btn(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div[@class='faculty_final_assessment_button final_assessment_button_disabled']"));
+	}
+
+	public static WebElement Click_Resume_Btn(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div[@class=\\\"faculty_activities_title\\\"] //following::div[13]"));
+	}
+
+	public static WebElement Click_Profile_forLogOutOption(WebDriver driver) {
+		return  driver.findElement(By.xpath("//a[@class='dropdown-toggle settings_caret']"));
+	}
+public static WebElement Click_StudentProfile_forLogOut(WebDriver driver) {
+		return  driver.findElement(By.xpath("//a[text()='Logout']"));
+	}
+	public static WebElement Click_JoinGroup(WebDriver driver) {
+
+
+
+		return  driver.findElement(By.xpath("//div[text()='Select a group to join or add a new group']//following::div[2]"));
+	}
+	public static WebElement Click_DropDown_SelectJoinGroup(WebDriver driver) {
+		return  driver.findElement(By.xpath("//md-select[@name='type']"));
+	}
+	public static WebElement Select_Join_GroupName(WebDriver driver) {
+		return  driver.findElement(By.xpath("//md-option[@id='select_option_6']"));
+	}
+
+	public static WebElement View_VentureMembers(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div[text()='Venture Members']"));
+	}
+	public static WebElement Delete_VentureMember(WebDriver driver) {
+		return  driver.findElement(By.xpath("//i[@class='fa fa-trash-o edit_icon click_able action_btn']"));
+	}
+	public static WebElement Click_ToDelete_VentureMember(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[text()='Yes']"));
+	}
+	public static WebElement Delete_VentureMemberGroup(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div[text()='Assignment Submissions']//following::span[1]"));
+	}
+	public static WebElement Click_ToDelete_VentureMemberGroup(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[text()='Yes']"));
+	}
+	public static WebElement Verify_YopMailId(WebDriver driver) {
+		return  driver.findElement(By.xpath("//button[text()='Verify Email']"));
+	}
+
 	
 
 }

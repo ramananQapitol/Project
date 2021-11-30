@@ -686,3 +686,72 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
+      @tag49
+  Scenario Outline:  LW_TC_46 LW_TC_55  Verify whether the studentr is able to join the venture group which is created.
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    When Student should click on next button
+    And Student should able to enter valid password "<pass>"
+    And Student should in HOME Page
+    Then Student should click Resume Button
+    Then Student should click on Practice venture tab
+    Then Student should click on create_group
+    Then Student should fill mandatory fields and click on create
+    Then Student should logout from his profile
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1214@yopmail.com |  | pass |
+
+  @tag50
+  Scenario Outline: LW_TC_57 LW_TC_58 Verify whether the student admin is able to delete the other students who all 
+are there in the venture group.
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    When Student should click on next button
+    And Student should able to enter valid password "<pass>"
+    And Student should in HOME Page
+    Then Student should click Resume Button
+    Then Student should click on Practice venture tab
+    Then Student should click on Join_group
+    Then Student should select group name
+    Then Student should logout from that profile
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1215@yopmail.com |  | pass |
+  @tag51
+  Scenario Outline: LW_TC_60 LW_TC_61 Verify whether the Student is able to view the venture members or not.
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    When Student should click on next button
+    And Student should able to enter valid password "<pass>"
+    And Student should in HOME Page
+    Then Student should click Resume Button
+    Then Student should click on Practice venture tab
+    Then Student should click View venture members
+    Then Student should delete the venture
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1214@yopmail.com |  | pass |
+      
+  @tag52
+  Scenario Outline: LW_TC_ Registration Page
+    Given Student is on the Learnwise Login Page
+    When student should login with Random Mail Id and should verify that mail
+    Then Student should close the browser
+
+    Examples: 
+      | username |  | pass |
+      |          |  |      |    
+      
+      
+      
+      
+      
+      
+      

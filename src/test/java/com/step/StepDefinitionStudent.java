@@ -1,5 +1,6 @@
 package com.step;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -759,8 +760,148 @@ public void studentShouldClickCreateGroup() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.quit();
 	}
+}
+	@When("student should login with Random Mail Id and should verify that mail")
+	public void studentShouldLoginWithRandomMailIdAndShouldVerifyThatMail() throws InterruptedException {
+		WebElement Email=log.UserName(driver);
+		Email.click();
+
+
+		Random randomGenerator = new Random();
+		int randomInt = randomGenerator.nextInt(1000);
+		Email.sendKeys("Student"+ randomInt +"S@yopmail.com");
+		String NewMail= Email.getAttribute("value");
+		System.out.println(NewMail);
+
+		log.NextBtn(driver).click();  
+		log.ClickOn_InstituteCode(driver).sendKeys("FCV16529");
+
+		log.ReType_EmailId(driver).sendKeys(NewMail);
+		log.Enter_Password(driver).sendKeys("pass");
+		log.Confirm_Password(driver).sendKeys("pass");
+		
+		Thread.sleep(3000);
+		
+		log.Click_On_DropDown_To_seeLanguage_Options(driver).click();
+
+		log.SelectLanguage_Option_Registration(driver).click();
+
+
+
+		log.ClickOn_checkBox(driver).click();
+
+		log.Accept_To_SignIn(driver).click();
+		log.ClickOn_SignIn(driver).click();
+
+		
+		
+		driver.get("https://yopmail.com/en/");
+		log.YOP_Login(driver).sendKeys(NewMail);
+		log.VerifyYOP_Mail(driver).click();
+
+		
+		
+		
+		Thread.sleep(3000);
+
+		driver.switchTo().frame("ifmail");
+		WebElement element = log.Verify_YopMailId(driver);
+		element.click();
+
+	}
+	@Then("Student should click Resume Button")
+	public void studentShouldClickResumeButton() throws InterruptedException {
+		log.ClickOn_StartOrResume(driver).click();
+		Thread.sleep(2000);
+	}
+
+	@Then("Student should click on Practice venture tab")
+	public void studentShouldClickOnPracticeVentureTab() throws InterruptedException {
+		log.ClickOn_PracticeVenture(driver).click();
+		Thread.sleep(2000);
+		
+	}
+
+	@Then("Student should click on create_group")
+	public void studentShouldClickOnCreate_group() throws InterruptedException {
+		log.Create_VentureGroup(driver).click();
+		Thread.sleep(2000);
+	}
+
+	@Then("Student should fill mandatory fields and click on create")
+	public void studentShouldFillMandatoryFieldsAndClickOnCreate() throws InterruptedException {
+		log.VentureGroup_Name(driver).sendKeys("Gb");
+		Thread.sleep(1000);
+		log.Venture_Name(driver).sendKeys("Mohan");
+		Thread.sleep(1000);
+		log.Venture_Description(driver).sendKeys("Welcome");
+		Thread.sleep(1000);
+		log.Venture_Industry(driver).click();
+		Thread.sleep(1000);
+		log.Select_Venture_Industry(driver).click();
+		Thread.sleep(1000);
+		log.Click_Create_Venture(driver).click();
+		Thread.sleep(1000);
+	}
+
+	@Then("Student should logout from his profile")
+	public void studentShouldLogoutFromHisProfile() throws InterruptedException {
+		Thread.sleep(2000);
+		log.Click_Profile_forLogOutOption(driver).click();
+		Thread.sleep(3000);
+		log.Click_StudentProfile_forLogOut(driver).click();
+		Thread.sleep(1000);
+		
+
+	}
+@Then("Student should click on Join_group")
+	public void studentShouldClickOnJoin_group() {
+		log.Click_JoinGroup(driver).click();		
+	}
+	@Then("Student should select group name")
+	public void studentShouldSelectGroupName() throws InterruptedException {
+				
+		log.Click_DropDown_SelectJoinGroup(driver).click();
+		Thread.sleep(1000);
+		log.Select_Join_GroupName(driver).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[text()='JOIN']")).click();
+		Thread.sleep(1000);
+	}
+
+
+@Then("Student should click View venture members")
+public void studentShouldClickViewVentureMembers() throws InterruptedException {
+	
+	log.View_VentureMembers(driver).click();
+   Thread.sleep(1000);
+}
+
+@Then("Student should delete the venture")
+public void studentShouldDeleteTheVenture() throws InterruptedException {
+	
+	 log.Delete_VentureMember(driver).click();
+	 Thread.sleep(1000);
+
+	 	 log.ClickOn_yesToDelete_venturegroup(driver).click();
+	 Thread.sleep(1000);
+	 log.Delete_VentureMemberGroup(driver).click();
+	 
+	 Thread.sleep(1000);
+	 log.Click_ToDelete_VentureMemberGroup(driver).click();
+	
 
 }
+@Then("Student should logout from that profile")
+public void studentShouldLogoutFromThatProfile() throws InterruptedException {
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//i[@class='fa fa-caret-down']")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//a[text()='Logout']")).click();
+	Thread.sleep(1000);
+}
+
+
 
 
 	}
