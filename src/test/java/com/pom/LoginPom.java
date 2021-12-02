@@ -25,6 +25,16 @@ public class LoginPom {
 			logger.info("username");
 			return driver.findElement(By.id("input_0"));
 		}
+		public static WebElement YOP_Login(WebDriver driver) {
+			return  driver.findElement(By.xpath("//input[@id='login']"));
+		}
+		public static WebElement VerifyYOP_Mail(WebDriver driver) {
+			return  driver.findElement(By.xpath("//i[@class='material-icons-outlined f36']"));
+		}
+		public static WebElement Verify_YopMailId(WebDriver driver) {
+			return  driver.findElement(By.xpath("//button[text()='Verify Email']"));
+		}
+
 		public static WebElement nextBtn(WebDriver driver) {
 			logger.info("next button clicked");
 			return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/header/div/div/div[2]/div/div/div/div[2]/form/button"));
@@ -221,6 +231,14 @@ public static WebElement activeBatches(WebDriver driver) {
 }
 public static WebElement editSubmit(WebDriver driver) {
 	return driver.findElement(By.xpath("//input[@id='edit-submit']"));
+	
+}
+public static WebElement yopMailinput(WebDriver driver) {
+	return driver.findElement(By.xpath("//input[@class='ycptinput']"));
+	
+}
+public static WebElement yopMailrefresh(WebDriver driver) {
+	return driver.findElement(By.xpath("//*[@id=\"refreshbut\"]/button/i"));
 	
 }
 

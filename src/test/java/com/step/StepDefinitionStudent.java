@@ -877,30 +877,33 @@ public void studentShouldClickViewVentureMembers() throws InterruptedException {
    Thread.sleep(1000);
 }
 
-@Then("Student should delete the venture")
-public void studentShouldDeleteTheVenture() throws InterruptedException {
-	
-	 log.Delete_VentureMember(driver).click();
-	 Thread.sleep(1000);
 
-	 	 log.ClickOn_yesToDelete_venturegroup(driver).click();
-	 Thread.sleep(1000);
-	 log.Delete_VentureMemberGroup(driver).click();
-	 
-	 Thread.sleep(1000);
-	 log.Click_ToDelete_VentureMemberGroup(driver).click();
-	
 
-}
 @Then("Student should logout from that profile")
 public void studentShouldLogoutFromThatProfile() throws InterruptedException {
 	Thread.sleep(3000);
-	driver.findElement(By.xpath("//i[@class='fa fa-caret-down']")).click();
+	
+	log.ClickOn_2ndStudentLogout(driver).click();
 	Thread.sleep(2000);
-	driver.findElement(By.xpath("//a[text()='Logout']")).click();
+	log.ClickOn_2ndStudentLogout_Option(driver).click();
 	Thread.sleep(1000);
 }
 
+@Then("Student should delete the venture")
+public void studentShouldDeleteTheVenture() throws InterruptedException {
+
+	log.Delete_VentureMember(driver).click();
+	Thread.sleep(1000);
+	log.ClickOn_yesToDelete_venturegroup(driver).click();
+
+	Thread.sleep(1000);
+	log.Delete_VentureMemberGroup(driver).click();
+
+	Thread.sleep(1000);
+	log.Click_ToDelete_VentureMemberGroup(driver).click();
+
+
+}
 
 
 

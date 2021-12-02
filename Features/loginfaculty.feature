@@ -714,19 +714,27 @@ Feature: Login Wadhwani
     Examples: 
       | username                    | password |
       | qapital.faculty@yopmail.com | Pass@123 |
-@tag55
-  Scenario Outline: FA_30 Faculty should receive temporary password.
+
   
-   Given faculty should be on yopmail mail home page 
-   When  faculty enter mail id"<username>"
-   Then faculty should click on next arrow button
-   And Faculty should copy temparory password
+     @tag55
+  Scenario Outline: FA_29 Forgot password is click or not
+    Given Faculty is on the Learnwise Login Page
+   Then Faculty click the Next Button
    Then Faculty should close the Browser
-    
-    
+
     Examples: 
-      | username                        |    pass   |
-      | qapital.faculty11@yopmail.com   |    pass   |
-  
-    
-    
+      | username                    |password|
+      |  ||
+    #@tag60
+  #Scenario Outline: FA_30 Faculty should receive temporary password.
+  #
+   #Given faculty should be on yopmail mail home page 
+   #When  faculty enter mail id"<username>"
+   #Then faculty should click on next arrow button
+   #And Faculty should copy temparory password
+   #Then Faculty should close the Browser
+    #
+    #
+    #Examples: 
+      #| username                        |    pass   |
+      #| qapital.faculty11@yopmail.com   |    pass   |

@@ -704,7 +704,7 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1214@yopmail.com |  | pass |
 
-  @tag50
+ @tag50
   Scenario Outline: LW_TC_57 LW_TC_58 Verify whether the student admin is able to delete the other students who all 
 are there in the venture group.
     Given Student is on the Learnwise Login Page
@@ -722,6 +722,8 @@ are there in the venture group.
     Examples: 
       | username                |  | pass |
       | student1215@yopmail.com |  | pass |
+
+
   @tag51
   Scenario Outline: LW_TC_60 LW_TC_61 Verify whether the Student is able to view the venture members or not.
     Given Student is on the Learnwise Login Page

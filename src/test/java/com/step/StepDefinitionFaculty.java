@@ -2,6 +2,7 @@ package com.step;
 
 
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
@@ -768,6 +769,7 @@ public class StepDefinitionFaculty{
 		public void facultyShouldCloseTheBrowser1() {
 		    driver.quit();
 		}
+		
 		@Given("faculty should be on yopmail mail home page")
 	    public void faculty_should_be_on_yopmail_mail_home_page() {
 
@@ -783,29 +785,96 @@ public class StepDefinitionFaculty{
 
 	    @When("faculty enter mail id{string}")
 	    public void faculty_enter_mail_id(String string) {
-	    	//pom.mail_id(driver).sendKeys(string);
-	    	driver.findElement(By.xpath("//input[@class='ycptinput']")).sendKeys("qapital.faculty11@yopmail.com");
+	    	
+	    	LoginPom.yopMailinput(driver).sendKeys("qapital.faculty11@yopmail.com");;
 		
 	    }
 
 	    @Then("faculty should click on next arrow button")
 	    public void faculty_should_click_on_next_arrow_button() {
-	        // //*[@id="refreshbut"]/button/i
-	    	driver.findElement(By.xpath("//*[@id=\"refreshbut\"]/button/i")).click();
+	        
+	    	LoginPom.yopMailrefresh(driver).click();
 	    	
 	    }
-	    ////h5[text()='Email : qapital.faculty11@yopmail.com']//following::h5[1]
+	    
 	    @Then("Faculty should copy temparory password")
 	    public void faculty_should_copy_temparory_password() {
 	    	String t = "Email : qapital.faculty11@yopmail.com";
-	        // getPageSource() to get page source
+	       
+	        if ( driver.getPageSource().contains("Email : qapital.faculty11@yopmail.com")){
+	           System.out.println("Text: " + t + " is present. ");
+	        } else {
+	           System.out.println("Text: " + t + " is not present. ");
+	        }
+	        
+	    }
+	    @Then("Faculty click the Next Button")
+	    public void facultyClickTheNextButton1() throws InterruptedException {
+	       
+	       WebElement Email=LoginPom.username(driver);
+			Email.click();
+
+
+			
+			Email.sendKeys("qapital.faculty11@yopmail.com");
+			String NewMail= Email.getAttribute("value");
+			System.out.println(NewMail);
+			LoginPom.nextBtn(driver).click();
+//			 driver.findElement(By.xpath("//button[text()='NEXT']")).click();
+			LoginPom.facultyPasskey(driver).sendKeys("865986");
+			LoginPom.facultynewPassword(driver).sendKeys("pass");
+			LoginPom.facultyconfirmPassword(driver).sendKeys("pass");
+			LoginPom.facultySigninButton(driver).click();
+			driver.get("https://yopmail.com/en/");
+			LoginPom.YOP_Login(driver).sendKeys(NewMail);
+//			Loginpom.YOP_Login(driver).sendKeys(NewMail);
+			LoginPom.VerifyYOP_Mail(driver).click();
+			
+			Thread.sleep(3000);
+
+			driver.switchTo().frame("ifmail");
+			String t = "Email : qapital.faculty11@yopmail.com";
+		       
 	        if ( driver.getPageSource().contains("Email : qapital.faculty11@yopmail.com")){
 	           System.out.println("Text: " + t + " is present. ");
 	        } else {
 	           System.out.println("Text: " + t + " is not present. ");
 	        }
 	    }
+
+	   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    }
+
 
 
 		

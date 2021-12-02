@@ -20,6 +20,14 @@ public class LoginPomStudent {
 		return driver.findElement(By.xpath("//button[@type='submit']"));
 
 	}
+	
+	public static WebElement ClickOn_2ndStudentLogout(WebDriver driver) {
+		return driver.findElement(By.xpath("//i[@class='fa fa-caret-down']"));
+	}
+	
+	public static WebElement ClickOn_2ndStudentLogout_Option(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[text()='Logout']"));
+	}
 	public static WebElement Password(WebDriver driver) {
 		return driver.findElement(By.xpath("//*[@id=\"input_4\"]"));
 	}
@@ -178,9 +186,7 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 	public static WebElement ClickOnDelete_venturegroup(WebDriver driver) {
 		return driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div[7]/div/div[3]/div/span/i"));
 	}
-	public static WebElement ClickOn_yesToDelete_venturegroup(WebDriver driver) {
-		return driver.findElement(By.xpath("//*[@id=\"dialogContent_0\"]/div/form/md-dialog-actions/button[2]"));
-	}
+	
 	public static WebElement ClickOn_ReSubmit_Assesment(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'Re-Submit')]"));
 	}
@@ -221,6 +227,9 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 	}
 	public static WebElement ClickOn_DeleteIcon(WebDriver driver) {
 		return driver.findElement(By.xpath("//div[contains(text(),'Group Name')]//following::span[1]"));
+	}
+	public static WebElement ClickOn_yesToDelete_venturegroup(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[text()='Yes']"));
 	}
 	public static WebElement ClickOn_YesToDeleteIcon(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'Yes')]"));
