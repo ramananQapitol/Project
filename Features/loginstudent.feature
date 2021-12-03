@@ -1,6 +1,6 @@
 Feature: Login cucumber
 
-  @tag1
+@tag1
   Scenario Outline: LW_TC_01 Verify if Student is able to enter email in the Email text field
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
@@ -40,26 +40,26 @@ Feature: Login cucumber
     Then Student should close the browser
 
     Examples: 
-      | username               |
-      | student987@yopmail.com |
-| student9876@yopmail.com |
+      | username                |
+      | student987@yopmail.com  |
+      | student9876@yopmail.com |
+
   @tag5
   Scenario Outline: LW_TC_05 Verify if Student can enter the password in New password textfield
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter password "<pass>"
     Then Student should close the browser
 
     Examples: 
       | username               |  | pass      |
       | student246@yopmail.com |  | Admin@123 |
-
-  @tag6
+@tag6
   Scenario Outline: LW_TC__06 Verify if Student can enter the combination of lowercase and uppercase as new password
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter password "<pass>"
     Then Student should close the browser
 
@@ -71,8 +71,8 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_07 Verify if Student can click on Sign in button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
-    And Student should able to enter new password "<pass>"
+    Then Student should click Next Button
+    Then Student should able to enter password "<pass>"
     Then Student should able to enter confirm password "<pass>"
     Then Student should close the browser
 
@@ -83,18 +83,12 @@ Feature: Login cucumber
   @tag8
   Scenario Outline: LW_TC_08_09 Verify if Sign in button is not enabled without entering any of the the fields
     Given Student is on the Learnwise Login Page
-    When Student should enter valid "<username>"
-    When Student should click on next button
-    And Student should enter Institution code"<code>"
-    And Student should re-enter valid email"<username>"
-    And Student should enter the valid password "<passkey>"
-    And Student should confirm password "<password>"
-    Then Should should click on SignIn Button
+    When student should login with Random Mail Id and should verify that mail
     Then Student should close the browser
 
     Examples: 
-      | username               | code     | username               | passkey   | password  |
-      | student246@yopmail.com | QAPI5260 | student246@yopmail.com | ADMIadmin | ADMIadmin |
+      | username |  | pass |
+      |          |  |      |
 
   @tag9
   Scenario Outline: LW_TC_17,19 Verify whether the student is able to redirect to the home page if he enters the valid emailid
@@ -102,7 +96,7 @@ Feature: Login cucumber
 
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should close the browser
@@ -115,7 +109,7 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_18,20 Verify whether the student is able to login if he uses valid mail id and invalid password
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should close the browser
@@ -123,15 +117,13 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass   |
       | student1212@yopmail.com |  | passes |
-
-  @tag11
+@tag11
   Scenario Outline: LW_TC_21 Verify whether the Student is able view all main features of Dashboard or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then Student should able to see Hamburger
+    And Student should click on signIn
     Then Student should close the browser
 
     Examples: 
@@ -142,9 +134,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_22 Verify whether the student is able to click on hamburger or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should able to click on Hamburger
     Then Student should close the browser
 
@@ -156,10 +148,10 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_23 Verify whether the Student is able to click on start/ resume or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then Student should see start or resume button
+    And Student should click on signIn
+    Then Student should click on start or resume button
     Then Student should close the browser
 
     Examples: 
@@ -170,9 +162,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_24 Verify whether the Student is able to click on start/ resume or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should click on start or resume button
     Then Student should close the browser
 
@@ -184,23 +176,22 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_27 Verify if Student is able to click on the Course tab
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should click on Course Module
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
-  @tag16
+@tag16
   Scenario Outline: LW_TC_28 Verify if the join button is enabled or not without entering the batchid
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should see Join Course is enabled or not
     Then Student should close the browser
 
@@ -212,9 +203,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_30 Verify if Student is able to click on Join button.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should enter Batch id"<BatchId>"
     Then Student should click on Join Course
     Then Student should close the browser
@@ -227,9 +218,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_32 Verify if Student is able to click on Yes button or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should click o Batch Name
     Then Student should close the browser
 
@@ -241,9 +232,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_34 Verify if Student is able to click on Chat icon.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should click on Chat Icon
     Then Student should close the browser
 
@@ -255,24 +246,26 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_36 Verify if Student can Click on Quizzes
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
+    And Student should click on Quizzes
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  @tag21
+
+@tag21
   Scenario Outline: LW_TC_49 Verify whether the student is able to create te the new venture group without
     providing the mandatory details.
 
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then student is able to create to the new venture group without providing the mandatory details
     Then Student should close the browser
 
@@ -284,9 +277,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_48_52_60 Verify whether the student is able to create the new venture group
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should click courses
     Then Student should click on Practice ventures
     Then student should click on create group
@@ -302,9 +295,9 @@ Feature: Login cucumber
 
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should click courses
     Then Student should create Practice venture group
     Then Student should edit Batch Id
@@ -313,13 +306,14 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
+
   @tag24
   Scenario Outline: LW_TC_62 Verify whether the Student is able to view the venture members or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should click courses
     Then Student should click on PV Milestones
     Then Student should close the browser
@@ -332,23 +326,22 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_90_91_92_93_94_95_96_97_98_99 Verify if Student clicks on the Save button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should Click on profile
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
-  @tag26
+@tag26
   Scenario Outline: LW_TC_100 Verify if student is able to click on the notification icon or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should Click on Notification icon
     Then Student should close the browser
 
@@ -360,9 +353,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_101 Verify if student is able to view the notifications or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should view Notifications
     Then Student should close the browser
 
@@ -374,9 +367,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_102 Verify if student is able to click on the reports tab or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should Click on Reports
     Then Student should close the browser
 
@@ -388,9 +381,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_103 verify if student is able to view the reports or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should view Reports
     Then Student should close the browser
 
@@ -402,23 +395,22 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_104 Verify if student is able to view and download the quiz report or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should view Download quizz report
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
-  @tag31
+@tag31
   Scenario Outline: LW_TC_105 Verify if student is able to view and download the assignment report or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should Download quizz report
     Then Student should close the browser
 
@@ -430,9 +422,9 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_106 Verify if student is able to view and download the final assesment report or not
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should view final assesment report
     Then Student should close the browser
 
@@ -441,12 +433,12 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag33
-  Scenario Outline: LW_TC_74 Veriyf if Student clicks on the Submit button
+  Scenario Outline: LW_TC_73 Veriyf if Student clicks on the Submit button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should able Click on Submit Button
     Then Student should close the browser
 
@@ -455,12 +447,12 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag34
-  Scenario Outline: LW_TC_75 Verify if Student clicks on the back button
+  Scenario Outline: LW_TC_74 Verify if Student clicks on the back button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should able Click on Back Button
     Then Student should close the browser
 
@@ -472,37 +464,22 @@ Feature: Login cucumber
   Scenario Outline: LW_TC_76 Verify if Student clicks on Assignment name
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should able Click any PV_Milestone
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
-  @tag36
-  Scenario Outline: LW_TC_77_78 Verify if Student can edit the uploaded document
-    Given Student is on the Learnwise Login Page
-    When Student should enter valid "<username>"
-    When Student should click on next button
-    Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then Student should able to remove Upload document option
-    Then Student should close the browser
-
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-
-  @tag37
+@tag36
   Scenario Outline: LW_TC_79 Veriyf if Student can view the status as submitted once assignment is uploaded
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     Then Student should able to check status
     Then Student should close the browser
 
@@ -510,14 +487,14 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  @tag38
+  @tag37
   Scenario Outline: LW_TC_80  Check Student should be click on view submit
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then student click resume
+    And Student should click on signIn
+    Then Student should click on start or resume button
     Then Student click on PV milestones Button
     Then Student click on any assignment
     Then Student click on view submission
@@ -527,18 +504,35 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  @tag39
+  @tag38
   Scenario Outline: LW_TC_81 Check Student should be in milestone2
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then student click resume
+    And Student should click on signIn
+    Then Student should click on start or resume button
     Then Student click on PV milestones Button
     Then Student click milestone 2
     Then Student click on view submit
-    Then verify it enter or not
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag39
+  Scenario Outline: LW_TC_83,85Check Student should be click on attempt button and verify error
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click on start or resume button
+    Then Student click on PV milestones Button
+    Then Student click milestone 2
+    Then Student click on view submit
+    Then Student click on attempt button
     Then Student should close the browser
 
     Examples: 
@@ -546,122 +540,80 @@ Feature: Login cucumber
       | student1212@yopmail.com |  | pass |
 
   @tag40
-  Scenario Outline: LW_TC_83,85Check Student should be click on attempt button and verify error
+  Scenario Outline: LW_S_S63  Verify whether the student is able to view the assignments or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
-    Then student click resume
-    Then Student click on PV milestones Button
-    Then Student click milestone 2
-    Then Student click on view submit
-    Then Student click on attempt button
-    Then verify it click or not
+    And Student should click on signIn
+    And Student should click on start or resume button
+    Then click on pvmilestones tab and check whether the student is able to view the assignments.
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+@tag41
+  Scenario Outline: LW_S_S66 Verify whether the student is able to submit the assignment or not
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    And Student should click on start or resume button
+    Then click on pvmilestones tab and check whether the student is able to view the assignments.
+    Then clik on view details button
     Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  @tag41
-  Scenario Outline: LW_TC_86 Check Student should be in home page and see the resume or start button
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
-    Then click on pvmilestones tab
-
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-
   @tag42
-  Scenario Outline: LW_S_S63  Verify whether the student is able to view the assignments or not.
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
+  Scenario Outline: LW_S_S67 Verify whether the student is able to resubmit the assignment
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    And Student should click on start or resume button
     Then click on pvmilestones tab and check whether the student is able to view the assignments.
+    Then clik on view details button
+    Then click on viewsubmission  button in the selected pv milestone assignment.
+    Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
   @tag43
-  Scenario Outline: LW_S_S66 Verify whether the student is able to submit the assignment or not
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
-    Then click on pvmilestones tab and check whether the student is able to view the assignments.
-    Then clik on view details button
-
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-
-  @tag44
-  Scenario Outline: LW_S_S67 Verify whether the student is able to resubmit the assignment
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
-    Then click on pvmilestones tab and check whether the student is able to view the assignments.
-    Then clik on view details button
-    Then click on viewsubmission  button in the selected pv milestone assignment.
-
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-
-  @tag45
   Scenario Outline: LW_S_S67 	Verify whether the student is able to resubmit the assignment
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    And Student should click on start or resume button
     Then click on pvmilestones tab and check whether the student is able to view the assignments.
     Then clik on view details button
     Then click on resubmit button.
+    Then Student should close the browser
 
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  @tag46
-  Scenario Outline: LW_TC_86,90 Check Student should be able to submit assisment
-    Given Student Should Enter Valid User Name "<username>"
-    When Student should click on next Button
-    Then Student should enter the valid Password "<pass>"
-    And Student should click on the signin Button
-    And Student should click on resume/start button
-    Then click on pvmilestones tab and check whether the student is able to view the assignments.
-    Then clik on view details button
-    And student should click on submit
-    And student should click on close icon
-    And student should click on back button
-    And student should click on mile stone
-    Then student should close the browers
+  
 
-    Examples: 
-      | username                |  | pass |
-      | student1212@yopmail.com |  | pass |
-
- @tag47
+  @tag45
   Scenario Outline: LW_TC_52 Verify whether the student is able to cancel the process of creating the
     Venture group in the middle by clicking on the cancel button.
 
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should click courses
     Then student should click on cancel group
     Then Student should close the browser
@@ -669,16 +621,15 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-
-  @tag48
+@tag46
   Scenario Outline: LW_TC_52 Verify whether the student is able to cancel the process of creating the
     Venture group in the middle by clicking on the cancel button.
 
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
+    Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    And Student should click on signIn
     And Student should click courses
     Then student should click create group
     Then Student should close the browser
@@ -686,13 +637,29 @@ Feature: Login cucumber
     Examples: 
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
-      @tag49
-  Scenario Outline:  LW_TC_46 LW_TC_55  Verify whether the studentr is able to join the venture group which is created.
+
+  @tag47
+  Scenario Outline: LW_TC_86 Check Student should be in home page and see the resume or start button
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
-    And Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    And Student should click on resume or start button
+    Then click on pvmilestones tab
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag48
+  Scenario Outline: LW_TC_46 LW_TC_55  Verify whether the studentr is able to join the venture group which is created.
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
     Then Student should click Resume Button
     Then Student should click on Practice venture tab
     Then Student should click on create_group
@@ -704,14 +671,15 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1214@yopmail.com |  | pass |
 
- @tag50
-  Scenario Outline: LW_TC_57 LW_TC_58 Verify whether the student admin is able to delete the other students who all 
-are there in the venture group.
+  @tag49
+  Scenario Outline: LW_TC_57 LW_TC_58 Verify whether the student admin is able to delete the other students who all
+    are there in the venture group.
+
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
-    And Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
     Then Student should click Resume Button
     Then Student should click on Practice venture tab
     Then Student should click on Join_group
@@ -723,14 +691,13 @@ are there in the venture group.
       | username                |  | pass |
       | student1215@yopmail.com |  | pass |
 
-
-  @tag51
+  @tag50
   Scenario Outline: LW_TC_60 LW_TC_61 Verify whether the Student is able to view the venture members or not.
     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
-    When Student should click on next button
-    And Student should able to enter valid password "<pass>"
-    And Student should in HOME Page
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
     Then Student should click Resume Button
     Then Student should click on Practice venture tab
     Then Student should click View venture members
@@ -740,20 +707,160 @@ are there in the venture group.
     Examples: 
       | username                |  | pass |
       | student1214@yopmail.com |  | pass |
-      
-  @tag52
-  Scenario Outline: LW_TC_ Registration Page
-    Given Student is on the Learnwise Login Page
-    When student should login with Random Mail Id and should verify that mail
-    Then Student should close the browser
 
-    Examples: 
-      | username |  | pass |
-      |          |  |      |    
+      @tag52
+Scenario Outline: LW_S_S65  and LW_S_S72	Verify whether the student is able to resubmit the assignment
+Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab 
+	And check whether the student is able to view the assignments.
+	Then clik on view details button
+    Then click on resubmit button
+    Then click on remove button and click on choose unsupported file and submit 
+  Then Student should close the browser
+
+ 	
+ 		Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |	
+		
+@tag53
+ Scenario Outline: LW_S_S71 and LW_S_S73 and LW_S_S77 and LW_S_S78	Verify whether the student is able to resubmit the assignment
+	Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab 
+	And check whether the student is able to view the assignments.
+	Then clik on view details button
+    Then click on resubmit button
+    Then click on remove button and click on choose file and submit 
+  Then Student should close the browser
+
+ 	
+ 		Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |
       
-      
-      
-      
-      
+@tag54
+Scenario Outline: Check Student should be in the home page and see all the tabs
+	  Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+	  Then Student should close the browser
+	
+	Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |
+		
+@tag55
+Scenario Outline: Check Student should be in home page and see the resume or start button
+	  Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+	  Then Student should close the browser
+	
+	
+	Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |
+		
+@tag56
+Scenario Outline: Check Student should be in home page and see the resume or start button
+	  Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+	  Then Student should close the browser
+	Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |
+		
+			
+@tag57
+Scenario Outline: LW_S_S62-64  Verify whether the student is able to view the assignments or not.
+	 Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab 
+	And check whether the student is able to view the assignments.
+	  Then Student should close the browser
+	
+	Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |	
+		
+		
+	
+		
+				
+		
+@tag58
+Scenario Outline: LW_S_S66 Verify whether the student is able to resubmit the assignment or not
+	Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab
+	And check whether the student is able to view the assignments.
+	Then clik on view details button  
+      Then Student should close the browser
+	Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |	
+		
+				
+@tag59
+Scenario Outline:LW_S_S67 Verify if Student can view the start date of a course 
+	Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab 
+	And check whether the student is able to view the assignments.
+	Then clik on view details button
+ 	Then click on viewsubmission  button in the selected pv milestone assignment.
+ 	  Then Student should close the browser
+ 	
+ 		Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |
+@tag60
+Scenario Outline:LW_S_S67 -68	Verify whether the student is able to resubmit the assignment
+	Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    Then Student should click Resume Button
+	Then click on pvmilestones tab
+	And check whether the student is able to view the assignments.
+	Then clik on view details button
+ 	Then click on resubmit button.
+ 	  Then Student should close the browser
+ 	
+ 		Examples: 
+		| username                |  | pass    |
+		| student1212@yopmail.com |  | pass |	
+		
+ 
       
       

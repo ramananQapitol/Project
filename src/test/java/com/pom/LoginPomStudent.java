@@ -11,7 +11,6 @@ public class LoginPomStudent {
 	static log logger = new log();
 
 
-
 	public static WebElement UserName(WebDriver driver) {
 		logger.info("entering username");
 		return driver.findElement(By.id("input_0"));	
@@ -23,6 +22,9 @@ public class LoginPomStudent {
 	
 	public static WebElement ClickOn_2ndStudentLogout(WebDriver driver) {
 		return driver.findElement(By.xpath("//i[@class='fa fa-caret-down']"));
+	}
+	public static WebElement ClickOn_StudentLogout(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
 	}
 	
 	public static WebElement ClickOn_2ndStudentLogout_Option(WebDriver driver) {
@@ -84,7 +86,7 @@ public static WebElement Enter_BatchId(WebDriver driver) {
 	public static WebElement Clicking_On_BatchName(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'batch098')]"));
 	}
-	public static WebElement Clicking_On_ChatIcon(WebDriver driver) {
+public static WebElement Clicking_On_ChatIcon(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[contains(text(),'batch098')]//following::i[3]"));
 	}
 	public static WebElement Clicking_On_Quizzes(WebDriver driver) {
@@ -105,7 +107,7 @@ public static WebElement Enter_BatchId(WebDriver driver) {
 	public static WebElement Create_VentureGroup(WebDriver driver) {
 		return driver.findElement(By.xpath("//div[contains(text(),'Select a group to join or add a new group')]//following::div[8]"));
 	}
-	public static WebElement VentureGroup_Name(WebDriver driver) {
+public static WebElement VentureGroup_Name(WebDriver driver) {
 		return driver.findElement(By.xpath("//input[@id='input_4']"));
 	}
 	public static WebElement Venture_Name(WebDriver driver) {
@@ -153,7 +155,7 @@ public static WebElement Enter_BatchId(WebDriver driver) {
 	public static WebElement ClickOn_Edit_InstitueCode(WebDriver driver) {
 		return driver.findElement(By.xpath("//input[@id='input_7']"));
 	}
-	public static WebElement ClickOn_Edit_Language(WebDriver driver) {
+public static WebElement ClickOn_Edit_Language(WebDriver driver) {
 		return driver.findElement(By.xpath("//*[@id=\\\"select_value_label_0\\\"]/span[1]"));
 	}
 	public static WebElement ClickOn_Edit_ChangePassword(WebDriver driver) {
@@ -207,12 +209,7 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 		return driver.findElement(By.xpath("//md-option[@id='select_option_13']"));
 
 	}
-
-
-
-
-
-	public static WebElement ClickOn_Edit_Batch(WebDriver driver) {
+public static WebElement ClickOn_Edit_Batch(WebDriver driver) {
 		return driver.findElement(By.xpath("//img[@class='edit_icon']"));
 	}
 	public static WebElement ClickOn_Edit_Batch_Name(WebDriver driver) {
@@ -255,10 +252,7 @@ public static WebElement ClickOn_Edit_SaveChanges(WebDriver driver) {
 	public static WebElement VerifyYOP_Mail(WebDriver driver) {
 		return  driver.findElement(By.xpath("//i[@class='material-icons-outlined f36']"));
 	}
-
-
-
-	public static WebElement ClickTo_Verify_YOP_Login(WebDriver driver) {
+public static WebElement ClickTo_Verify_YOP_Login(WebDriver driver) {
 		return  driver.findElement(By.xpath("//button[text()='Verify Email']"));
 	}
 
@@ -307,7 +301,53 @@ public static WebElement Click_StudentProfile_forLogOut(WebDriver driver) {
 	public static WebElement Verify_YopMailId(WebDriver driver) {
 		return  driver.findElement(By.xpath("//button[text()='Verify Email']"));
 	}
-
+public static WebElement Join_Btn(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[text()='JOIN']"));
+	}
+	public static WebElement Courses_Details(WebDriver driver) {
+		return  driver.findElement(By.xpath("//a[@title='Course Details']"));
+	}
+	public static WebElement Re_Submit_Btn(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[contains(text(),'Re-Submit')]"));
+	}
+	public static WebElement Click_Any_Assignment(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"assignment_submit_att\"]/span"));
+	}
+	public static WebElement ClickOn_view_submission(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[1]/div/span"));
+	}
+	public static WebElement ClickOn_Milestone_Number(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"myassignments-table\"]/a[2]/div/table/tbody/tr[1]/td[2]"));
+	}
 	
+	public static WebElement ClickOn_Edit_Submit(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"edit-submit\"]"));
+	}
+	public static WebElement ClickOn_PVmilestones(WebDriver driver) {
+		return  driver.findElement(By.xpath("//a[@title=\"PV Milestones\"]"));
+	}
+	public static WebElement ClickOn_DetailsButton(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div [@id='assignment_submit_att' and @nid='45544812' ]\n"));
+	}
+	public static WebElement ClickOn_ViewsubmissionButton(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[contains(text(),'View Submission')]"));
+	}
+	public static WebElement ClickOn_Resubmit_Button(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"myassg-attempts-table\"]/div/table/tbody/tr/td[3]/div[2]/div"));
+	}
+	public static WebElement ClickOn_Submit_Button(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[contains(text(),'Submit')]"));
+	}
+	public static WebElement ClickOn_CloseIcon(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-closethick']"));
+	}
+	public static WebElement ClickOn_Back_Button(WebDriver driver) {
+		return  driver.findElement(By.xpath("//*[@id=\"assg-attempt-display-content\"]/a"));
+
+	}
+	public static WebElement ClickOn_Milestone(WebDriver driver) {
+		return  driver.findElement(By.xpath("//span[contains(text(),'Submit')]"));
+	}
+
 
 }
