@@ -826,14 +826,14 @@ public class StepDefinitionFaculty{
 			String NewMail= Email.getAttribute("value");
 			System.out.println(NewMail);
 			LoginPom.nextBtn(driver).click();
-//			 driver.findElement(By.xpath("//button[text()='NEXT']")).click();
+
 			LoginPom.facultyPasskey(driver).sendKeys("865986");
 			LoginPom.facultynewPassword(driver).sendKeys("pass");
 			LoginPom.facultyconfirmPassword(driver).sendKeys("pass");
 			LoginPom.facultySigninButton(driver).click();
 			driver.get("https://yopmail.com/en/");
 			LoginPom.YOP_Login(driver).sendKeys(NewMail);
-//			Loginpom.YOP_Login(driver).sendKeys(NewMail);
+
 			LoginPom.VerifyYOP_Mail(driver).click();
 			
 			Thread.sleep(3000);

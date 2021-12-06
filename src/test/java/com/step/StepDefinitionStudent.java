@@ -625,6 +625,12 @@ public class StepDefinitionStudent {
 	}
 
 
+@Then("Student should click on resume or start button")
+public void studentShouldClickOnResumeOrStartButton() throws InterruptedException {
+	Thread.sleep(3000);
+	log.ClickOn_StartOrResume(driver).click();
+	Thread.sleep(1000);
+}
 
 	
 	
