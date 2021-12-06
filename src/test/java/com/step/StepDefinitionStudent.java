@@ -626,59 +626,46 @@ public class StepDefinitionStudent {
 
 
 
-	//@tag9
+	
+	
 
-	@Then("click on remove button and click on choose file and submit")
-	public void clickOnRemoveButtonAndClickOnChooseFileAndSubmit() throws InterruptedException {
-		//driver.findElement(By.xpath("//div[@class='button edit_user_attempt']")).click();
-		Thread.sleep(3000);
-		driver.switchTo().frame("prev_att");
-		driver.findElement(By.id("edit-field-assg-attempt-file-0-filefield-remove")).click();
-		System.out.println("success");
-		driver.findElement(By.id("edit-field-assg-attempt-file-0-upload")).sendKeys("/home/qq429/Downloads/1638336892_PV_Milestone_presentation_1-Dec12,2019 (5).pptx");
-		System.out.println("Doc added");
-		driver.findElement(By.xpath("//input[@id='edit-submit']")).click();
+	
 
-
-
-
+	@Then("click on pvmilestones tab")
+	public void clickOnPvmilestonesTab() {
+		
+		log.ClickOn_PVmilestones(driver).click();
 	}
-//tag8
-
-	@Then("click on remove button and click on choose unsupported file and submit")
-	public void clickOnRemoveButtonAndClickOnChooseUnsupportedFileAndSubmit() throws InterruptedException {
-		Thread.sleep(9000);
-		driver.switchTo().frame("prev_att");
-		driver.findElement(By.id("edit-field-assg-attempt-file-0-filefield-remove")).click();
-		System.out.println("success");
-		driver.findElement(By.id("edit-field-assg-attempt-file-0-upload")).sendKeys("/home/qq429/Downloads/Trello (Web).xmind");
-		System.out.println("Doc added");
-	//	driver.findElement(By.xpath("//input[@id='edit-submit']")).click();
-		//driver.findElement(By.xpath("//body[@id='domain_Learnwise']")).click();
-//driver.findElement(By.xpath("//button[text()='OK']")).click();
-
+	@Then("click on resubmit button")
+	public void clickOnResubmitButton1() {
+		
+		log.ClickOn_resubmit_Button(driver).click();
 	}
-	
-
-	
-
-//tag4
-	
 	@Then("check whether the student is able to view the assignments.")
 	public void checkWhetherTheStudentIsAbleToViewTheAssignments() {
 		
 	log.ClickOn_PV_Milestones(driver).click();
 	}
-
-
-	@Then("click on resubmit button")
-	public void clickOnResubmitButton1() {
-		driver.findElement(By.xpath("//div[@class='button edit_user_attempt']")).click();
+	@Then("click on remove button and click on choose file and submit")
+	public void clickOnRemoveButtonAndClickOnChooseFileAndSubmit() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.switchTo().frame("prev_att");
+		log.Choose_file(driver).click();
+		System.out.println("success");
+		log.Choose_file_ToSubmit(driver).sendKeys("/home/qq429/Downloads/1638336892_PV_Milestone_presentation_1-Dec12,2019 (5).pptx");
+		System.out.println("Doc added");
+		log.Choose_file_ToEditSubmit(driver).click();
 	}
+	@Then("click on remove button and click on choose unsupported file and submit")
+	public void clickOnRemoveButtonAndClickOnChooseUnsupportedFileAndSubmit() throws InterruptedException {
+		Thread.sleep(9000);
+		driver.switchTo().frame("prev_att");
+		log.Click_ToRemovefile(driver).click();
+		log.Click_ToRemovefile_Edit(driver).click();
+		System.out.println("success");
+		log.Click_ToRemovefile_Edit_Upload(driver).sendKeys("/home/qq429/Downloads/Trello (Web).xmind");
+		System.out.println("Doc added");
 
-	@Then("click on pvmilestones tab")
-	public void clickOnPvmilestonesTab() {
-		driver.findElement(By.xpath("//a[@title=\"PV Milestones\"]")).click();
 	}
 
 }

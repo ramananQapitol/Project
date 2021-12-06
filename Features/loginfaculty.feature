@@ -564,14 +564,13 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag43
-  Scenario Outline: FA_65-FA_69Verify Faculty should view Practice Venture
+  Scenario Outline: FA_65Verify Faculty should view Practice Venture
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
     When Faculty should see th Practice Venture
     Then Faculty should click on Practice Venture
-    Then Faculty should close the Browser
-
+     Then Faculty should close the Browser
     Examples: 
       | username                    | password |
       | qapital.faculty@yopmail.com | Pass@123 |
@@ -725,16 +724,4 @@ Feature: Login Wadhwani
     Examples: 
       | username                    |password|
       |  ||
-    #@tag60
-  #Scenario Outline: FA_30 Faculty should receive temporary password.
-  #
-   #Given faculty should be on yopmail mail home page 
-   #When  faculty enter mail id"<username>"
-   #Then faculty should click on next arrow button
-   #And Faculty should copy temparory password
-   #Then Faculty should close the Browser
-    #
-    #
-    #Examples: 
-      #| username                        |    pass   |
-      #| qapital.faculty11@yopmail.com   |    pass   |
+   

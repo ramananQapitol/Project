@@ -603,7 +603,24 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1212@yopmail.com |  | pass |
 
-  
+  @tag44
+  Scenario Outline: LW_TC_86,90 Check Student should be able to submit assisment
+    Given Student is on the Learnwise Login Page
+    When Student should enter valid "<username>"
+    Then Student should click Next Button
+    Then Student should able to enter valid password "<pass>"
+    And Student should click on signIn
+    And Student should click on start or resume button
+    Then click on pvmilestones tab and check whether the student is able to view the assignments.
+    Then clik on view details button
+    And student should click on submit
+    And student should click on close icon
+    And student should click on back button
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
 
   @tag45
   Scenario Outline: LW_TC_52 Verify whether the student is able to cancel the process of creating the
@@ -708,159 +725,147 @@ Feature: Login cucumber
       | username                |  | pass |
       | student1214@yopmail.com |  | pass |
 
-      @tag52
-Scenario Outline: LW_S_S65  and LW_S_S72	Verify whether the student is able to resubmit the assignment
-Given Student is on the Learnwise Login Page
+     @tag52
+  Scenario Outline: LW_S_S65  and LW_S_S72	Verify whether the student is able to resubmit the assignment
+    Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab 
-	And check whether the student is able to view the assignments.
-	Then clik on view details button
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then clik on view details button
     Then click on resubmit button
-    Then click on remove button and click on choose unsupported file and submit 
-  Then Student should close the browser
+    Then click on remove button and click on choose unsupported file and submit
+    Then Student should close the browser
 
- 	
- 		Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |	
-		
-@tag53
- Scenario Outline: LW_S_S71 and LW_S_S73 and LW_S_S77 and LW_S_S78	Verify whether the student is able to resubmit the assignment
-	Given Student is on the Learnwise Login Page
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag53
+  Scenario Outline: LW_S_S71 and LW_S_S73 and LW_S_S77 and LW_S_S78	Verify whether the student is able to resubmit the assignment
+     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab 
-	And check whether the student is able to view the assignments.
-	Then clik on view details button
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then clik on view details button
     Then click on resubmit button
-    Then click on remove button and click on choose file and submit 
-  Then Student should close the browser
+    Then click on remove button and click on choose file and submit
+    Then Student should close the browser
 
- 	
- 		Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |
-      
-@tag54
-Scenario Outline: Check Student should be in the home page and see all the tabs
-	  Given Student is on the Learnwise Login Page
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag54
+  Scenario Outline: Check Student should be in the home page and see all the tabs
+   Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
-	  Then Student should close the browser
-	
-	Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |
-		
-@tag55
-Scenario Outline: Check Student should be in home page and see the resume or start button
-	  Given Student is on the Learnwise Login Page
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag55
+  Scenario Outline: Check Student should be in home page and see the resume or start button
+    Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
-	  Then Student should close the browser
-	
-	
-	Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |
-		
-@tag56
-Scenario Outline: Check Student should be in home page and see the resume or start button
-	  Given Student is on the Learnwise Login Page
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag56
+  Scenario Outline: Check Student should be in home page and see the resume or start button
+    Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
-	  Then Student should close the browser
-	Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |
-		
-			
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
 @tag57
-Scenario Outline: LW_S_S62-64  Verify whether the student is able to view the assignments or not.
-	 Given Student is on the Learnwise Login Page
+  Scenario Outline: LW_S_S62-64  Verify whether the student is able to view the assignments or not.
+    Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab 
-	And check whether the student is able to view the assignments.
-	  Then Student should close the browser
-	
-	Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |	
-		
-		
-	
-		
-				
-		
-@tag58
-Scenario Outline: LW_S_S66 Verify whether the student is able to resubmit the assignment or not
-	Given Student is on the Learnwise Login Page
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag58
+  Scenario Outline: LW_S_S66 Verify whether the student is able to resubmit the assignment or not
+     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab
-	And check whether the student is able to view the assignments.
-	Then clik on view details button  
-      Then Student should close the browser
-	Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |	
-		
-				
-@tag59
-Scenario Outline:LW_S_S67 Verify if Student can view the start date of a course 
-	Given Student is on the Learnwise Login Page
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then clik on view details button
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag59
+  Scenario Outline: LW_S_S67 Verify if Student can view the start date of a course
+     Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab 
-	And check whether the student is able to view the assignments.
-	Then clik on view details button
- 	Then click on viewsubmission  button in the selected pv milestone assignment.
- 	  Then Student should close the browser
- 	
- 		Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |
-@tag60
-Scenario Outline:LW_S_S67 -68	Verify whether the student is able to resubmit the assignment
-	Given Student is on the Learnwise Login Page
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then clik on view details button
+    Then click on viewsubmission  button in the selected pv milestone assignment.
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |
+
+  @tag60
+  Scenario Outline: LW_S_S67 -68	Verify whether the student is able to resubmit the assignment
+    Given Student is on the Learnwise Login Page
     When Student should enter valid "<username>"
     Then Student should click Next Button
     Then Student should able to enter valid password "<pass>"
     And Student should click on signIn
     Then Student should click Resume Button
-	Then click on pvmilestones tab
-	And check whether the student is able to view the assignments.
-	Then clik on view details button
- 	Then click on resubmit button.
- 	  Then Student should close the browser
- 	
- 		Examples: 
-		| username                |  | pass    |
-		| student1212@yopmail.com |  | pass |	
-		
- 
-      
-      
+    Then click on pvmilestones tab
+    And check whether the student is able to view the assignments.
+    Then clik on view details button
+    Then click on resubmit button.
+    Then Student should close the browser
+
+    Examples: 
+      | username                |  | pass |
+      | student1212@yopmail.com |  | pass |

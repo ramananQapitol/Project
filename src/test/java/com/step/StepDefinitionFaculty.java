@@ -23,14 +23,14 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utilities.log;
+
 
 
 
 public class StepDefinitionFaculty{
 	
 	WebDriver driver;
-	log Logger =new log();
+	
 	
    LoginPom pom = new LoginPom();
 	@Given("Faculty is on the Learnwise Login Page")
@@ -42,6 +42,12 @@ public class StepDefinitionFaculty{
 				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		
 	}
+	@Then("Faculty click on chatbox")
+	public void facultyClickOnChatbox() {
+	 driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[1]/md-content/ul/div/li[1]/div/md-card/md-card-title/md-card-title-text/div[2]/div")).click(); 
+	}
+
+
 	@When("Faculty should enter valid {string}")
 	public void facultyShouldEnterValid(String string) {
 		

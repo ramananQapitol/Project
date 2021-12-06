@@ -4,15 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import utilities.log;
+
 
 public class LoginPomStudent {
-	WebDriver driver;
-	static log logger = new log();
+	
 
 
 	public static WebElement UserName(WebDriver driver) {
-		logger.info("entering username");
+		
 		return driver.findElement(By.id("input_0"));	
 	}
 	public static WebElement NextBtn(WebDriver driver) {
@@ -348,6 +347,29 @@ public static WebElement Join_Btn(WebDriver driver) {
 	public static WebElement ClickOn_Milestone(WebDriver driver) {
 		return  driver.findElement(By.xpath("//span[contains(text(),'Submit')]"));
 	}
+	public static WebElement ClickOn_resubmit_Button(WebDriver driver) {
+		return  driver.findElement(By.xpath("//div[@class='button edit_user_attempt']"));
+	}
+	public static WebElement Choose_file(WebDriver driver) {
+		return  driver.findElement(By.id("edit-field-assg-attempt-file-0-filefield-remove"));
+	}
+	public static WebElement Choose_file_ToSubmit(WebDriver driver) {
+		return  driver.findElement(By.id("edit-field-assg-attempt-file-0-upload"));
+
+	}
+	public static WebElement Choose_file_ToEditSubmit(WebDriver driver) {
+		return  driver.findElement(By.xpath("//input[@id='edit-submit']"));
+	}
+	public static WebElement Click_ToRemovefile(WebDriver driver) {
+		return  driver.findElement(By.id("edit-field-assg-attempt-file-0-filefield-remove"));
+	}
+	public static WebElement Click_ToRemovefile_Edit(WebDriver driver) {
+		return  driver.findElement(By.id("edit-field-assg-attempt-file-0-filefield-remove"));
+	}
+	public static WebElement Click_ToRemovefile_Edit_Upload(WebDriver driver) {
+		return  driver.findElement(By.id("edit-field-assg-attempt-file-0-upload"));
+	}
+
 
 
 }
